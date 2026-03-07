@@ -4,10 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BookOpen, ArrowRight } from "lucide-react";
-import { devotionals } from "@/data/devotionals";
+import { devotionals, getDevotionalBySlug } from "@/data/devotionals";
+
+// Change this slug to update the featured devotional each week
+const FEATURED_SLUG = "how-to-find-happiness-secrets-no-one-told-you";
 
 export default function DevotionalOfWeek() {
-  const latest = devotionals[devotionals.length - 1];
+  const latest = getDevotionalBySlug(FEATURED_SLUG.split("/")) || devotionals[devotionals.length - 1];
 
   return (
     <section className="relative py-24 bg-cream overflow-hidden">
