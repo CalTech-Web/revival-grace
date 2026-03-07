@@ -4,8 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import { devotionals } from "@/data/devotionals";
 
 export default function DevotionalOfWeek() {
+  const latest = devotionals[devotionals.length - 1];
+
   return (
     <section className="relative py-24 bg-cream overflow-hidden">
       {/* Background accents */}
@@ -24,13 +27,13 @@ export default function DevotionalOfWeek() {
               Devotional of the Week
             </h2>
             <h3 className="text-3xl font-bold text-dark mb-6">
-              How to Find Happiness: Secrets No One Told You
+              {latest.title}
             </h3>
             <p className="text-text leading-relaxed mb-6">
-              True happiness does not come from money or success. It grows through gratitude, faith, meaningful relationships, and inner peace. When people value contentment, love, and purpose over wealth, they discover lasting joy that only God can truly provide.
+              {latest.excerpt}
             </p>
             <Link
-              href="/devotionals"
+              href={`/devotionals/${latest.slug}`}
               className="inline-block px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors"
             >
               Read More
