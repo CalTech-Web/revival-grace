@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { Quote, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 const verses = [
   { text: "My Father who gave them to me is greater than anyone else; no one can snatch them from him.", ref: "John 10:29" },
@@ -66,39 +65,43 @@ export default function VerseOfTheDay() {
   }, []);
 
   return (
-    <section className="relative py-24 overflow-hidden">
-      {/* Background image */}
-      <Image
-        src="/images/verse-bg.jpg"
-        alt=""
-        fill
-        className="object-cover"
-      />
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-dark/70" />
+    <section className="relative py-28 bg-cream overflow-hidden">
+      {/* Decorative circles */}
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-secondary-light/[0.06] rounded-full -translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-secondary-light/[0.06] rounded-full -translate-y-1/2 translate-x-1/2" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
         >
-          <Quote className="w-8 h-8 text-secondary-light/60 mx-auto mb-4 rotate-180" strokeWidth={1.5} />
-
-          <div className="flex items-center justify-center gap-2 mb-8">
-            <Calendar className="w-4 h-4 text-secondary-light/70" strokeWidth={1.5} />
-            <p className="text-sm text-secondary-light/70 tracking-wide">{dateString}</p>
+          {/* Date badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-light/10 mb-6">
+            <Calendar className="w-3.5 h-3.5 text-secondary" strokeWidth={1.5} />
+            <p className="text-xs text-secondary font-medium tracking-wide">{dateString}</p>
           </div>
 
-          <h2 className="text-sm font-semibold text-secondary-light uppercase tracking-wider mb-10">
+          <h2 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-10">
             Verse of the Day
           </h2>
 
-          <blockquote className="text-2xl sm:text-3xl text-white leading-relaxed mb-6 font-light italic max-w-3xl mx-auto">
-            &ldquo;{todayVerse.text}&rdquo;
+          {/* Large decorative quotation mark */}
+          <div className="text-secondary-light/30 text-[120px] leading-none font-serif mb-[-40px]">
+            &ldquo;
+          </div>
+
+          <blockquote className="text-2xl sm:text-3xl lg:text-4xl text-dark leading-relaxed mb-8 font-light max-w-3xl mx-auto">
+            {todayVerse.text}
           </blockquote>
-          <p className="text-secondary-light font-medium text-lg">{todayVerse.ref}</p>
+
+          {/* Reference with decorative line */}
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-12 h-px bg-secondary-light/40" />
+            <p className="text-secondary font-semibold text-lg">{todayVerse.ref}</p>
+            <div className="w-12 h-px bg-secondary-light/40" />
+          </div>
         </motion.div>
       </div>
     </section>
