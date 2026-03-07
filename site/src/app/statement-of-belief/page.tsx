@@ -52,7 +52,7 @@ export default function StatementOfBeliefPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Statement of Belief
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-white/70 leading-relaxed">
               The foundational truths we hold at Revival Grace Ministry
             </p>
           </motion.div>
@@ -69,7 +69,7 @@ export default function StatementOfBeliefPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="p-8 rounded-2xl bg-warm-gray border border-gray-100"
+                className="p-8 rounded-2xl bg-warm-gray border border-black/10"
               >
                 <h3 className="text-xl font-bold text-dark mb-3">{belief.title}</h3>
                 <p className="text-text leading-relaxed">{belief.content}</p>

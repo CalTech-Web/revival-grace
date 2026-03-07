@@ -24,7 +24,7 @@ export default function DonatePage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Support the Ministry
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-white/70 leading-relaxed">
               Your generosity helps spread the flame of revival to believers around the world
             </p>
           </motion.div>
@@ -68,7 +68,7 @@ export default function DonatePage() {
             <p className="text-text mb-8 max-w-xl mx-auto">
               Thank you for considering a donation to Revival Grace Ministry. Your support, no matter the size, helps us fulfill our mission of spreading the Word and igniting faith in hearts around the world.
             </p>
-            <p className="text-gray-500 text-sm">
+            <p className="text-black/50 text-sm">
               For donation inquiries, please reach out through our contact page.
             </p>
           </motion.div>

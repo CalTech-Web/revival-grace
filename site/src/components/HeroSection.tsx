@@ -35,7 +35,7 @@ export default function HeroSection() {
               Revival Grace Ministry
             </span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
             A Christ-centered community devoted to teaching the Word, nurturing spiritual growth, and guiding believers toward purposeful living.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -61,7 +61,7 @@ export default function HeroSection() {
         transition={{ delay: 1.2, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
-        <ArrowDown className="w-5 h-5 text-gray-400 animate-bounce" strokeWidth={1.5} />
+        <ArrowDown className="w-5 h-5 text-white/50 animate-bounce" strokeWidth={1.5} />
       </motion.div>
     </section>
   );

@@ -49,7 +49,7 @@ export default function ContactPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Contact Us
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-white/70 leading-relaxed">
               We&apos;d love to hear from you. Reach out with questions, prayer requests, or just to say hello.
             </p>
           </motion.div>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border border-black/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                     placeholder="John Doe"
                   />
                 </div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border border-black/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                     rows={6}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-black/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"
                     placeholder="Your message, prayer request, or question..."
                   />
                 </div>

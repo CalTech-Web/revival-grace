@@ -15,7 +15,7 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="relative py-24 bg-dark overflow-hidden">
+    <section className="relative py-24 bg-black overflow-hidden">
       {/* Background graphics */}
       <div className="absolute top-0 right-1/4 w-[300px] h-[300px] bg-secondary-light/5 rounded-full blur-[80px]" />
       <div className="absolute bottom-0 left-1/4 w-[250px] h-[250px] bg-accent/5 rounded-full blur-[60px]" />
@@ -39,7 +39,7 @@ export default function NewsletterSection() {
           <h2 className="text-3xl font-bold text-white mb-4">
             Sign Up for the Revival Grace Ministry Newsletter
           </h2>
-          <p className="text-gray-400 mb-8 leading-relaxed">
+          <p className="text-white/50 mb-8 leading-relaxed">
             Join our newsletter to receive weekly devotionals, ministry updates, and inspiring messages from Pastor Ewang Nelson. Let your faith be refreshed regularly!
           </p>
 
@@ -56,7 +56,7 @@ export default function NewsletterSection() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-light/50"
+                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-secondary-light/50"
               />
               <button
                 type="submit"

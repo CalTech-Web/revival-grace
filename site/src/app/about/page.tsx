@@ -17,7 +17,7 @@ export default function AboutPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               About Revival Grace Ministry
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-white/70 leading-relaxed">
               Embracing Revival, Walking in Truth
             </p>
           </motion.div>
@@ -39,7 +39,7 @@ export default function AboutPage() {
                     <BookOpen className="w-20 h-20 text-primary" strokeWidth={1.5} />
                   </div>
                   <p className="text-dark font-bold text-xl">Pastor Ewang Nelson</p>
-                  <p className="text-gray-500">Founder & Senior Pastor</p>
+                  <p className="text-black/50">Founder & Senior Pastor</p>
                 </div>
               </div>
             </motion.div>
@@ -106,8 +106,8 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-dark mb-6 text-center">About Pastor Ewang Nelson</h2>
-          <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8 border border-gray-100">
-            <blockquote className="text-lg text-gray-700 italic leading-relaxed mb-4">
+          <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8 border border-black/10">
+            <blockquote className="text-lg text-black/70 italic leading-relaxed mb-4">
               &ldquo;I have a profound belief in the revival of the Word, a promise that prophets have echoed throughout these extraordinary times. I believe the Holy Spirit is beginning to reveal the remarkable plans He has been nurturing secretly for many years.&rdquo;
             </blockquote>
             <p className="text-right text-secondary font-semibold">

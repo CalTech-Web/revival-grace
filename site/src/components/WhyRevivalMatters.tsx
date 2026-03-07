@@ -46,7 +46,7 @@ export default function WhyRevivalMatters() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="text-center p-6 rounded-xl bg-warm-gray border border-gray-100"
+              className="text-center p-6 rounded-xl bg-warm-gray border border-black/10"
             >
               <point.icon className="w-7 h-7 text-accent mx-auto mb-3" strokeWidth={1.5} />
               <p className="text-dark font-medium text-sm">{point.text}</p>

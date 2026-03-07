@@ -70,7 +70,7 @@ export default async function DevotionalPage({ params }: Props) {
           </article>
 
           {categoryDevotionals.length > 1 && (
-            <div className="mt-16 pt-8 border-t border-gray-200">
+            <div className="mt-16 pt-8 border-t border-black/10">
               <h3 className="text-lg font-semibold text-dark mb-4">
                 More from {category?.name}
               </h3>
@@ -82,7 +82,7 @@ export default async function DevotionalPage({ params }: Props) {
                     className={`block p-4 rounded-lg transition-colors ${
                       d.slug === devotional.slug
                         ? "bg-secondary-light/10 border border-secondary-light/20"
-                        : "bg-gray-50 hover:bg-gray-100"
+                        : "bg-black/5 hover:bg-black/10"
                     }`}
                   >
                     <span className={`text-sm font-medium ${

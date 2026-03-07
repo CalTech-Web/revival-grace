@@ -40,7 +40,7 @@ export default function DevotionalsPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Devotionals
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
               Spirit-filled devotionals handpicked to strengthen your faith and awaken your purpose. Explore our categories below.
             </p>
           </motion.div>
@@ -61,7 +61,7 @@ export default function DevotionalsPage() {
           <div className="space-y-16">
             {categories.map((cat, i) => {
               const Icon = categoryIcons[cat.slug] || BookOpen;
-              const colors = categoryColors[cat.slug] || { bg: "from-gray-500/20 to-gray-600/10", icon: "text-gray-600" };
+              const colors = categoryColors[cat.slug] || { bg: "from-black/10 to-black/5", icon: "text-black/60" };
               const posts = getDevotionalsByCategory(cat.slug);
 
               return (
@@ -73,7 +73,7 @@ export default function DevotionalsPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.05 }}
                 >
-                  <div className={`rounded-2xl p-8 bg-gradient-to-br ${colors.bg} border border-gray-100`}>
+                  <div className={`rounded-2xl p-8 bg-gradient-to-br ${colors.bg} border border-black/10`}>
                     <div className="flex items-center gap-4 mb-4">
                       <Icon className={`w-8 h-8 ${colors.icon}`} strokeWidth={1.5} />
                       <h3 className="text-2xl font-bold text-dark">{cat.name}</h3>

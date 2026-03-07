@@ -37,7 +37,7 @@ export default function DevotionalOfWeek() {
             </Link>
 
             {/* eBook preview */}
-            <div className="mt-10 flex items-center gap-5 p-5 bg-white rounded-xl border border-gray-100 shadow-sm">
+            <div className="mt-10 flex items-center gap-5 p-5 bg-white rounded-xl border border-black/10 shadow-sm">
               <Image
                 src="/images/ebook-cover.jpg"
                 alt="The Flame of Revival eBook"
@@ -61,7 +61,7 @@ export default function DevotionalOfWeek() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-black/10">
               <div className="flex items-center gap-3 mb-5">
                 <Sparkles className="w-5 h-5 text-secondary-light" strokeWidth={1.5} />
                 <h3 className="text-lg font-bold text-dark">This Week&apos;s Word of Revival</h3>

@@ -36,7 +36,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-300 hover:text-secondary-light transition-colors"
+                className="text-sm text-white/70 hover:text-secondary-light transition-colors"
               >
                 {link.label}
               </Link>
@@ -67,7 +67,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block text-gray-300 hover:text-secondary-light transition-colors"
+                className="block text-white/70 hover:text-secondary-light transition-colors"
               >
                 {link.label}
               </Link>
