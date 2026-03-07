@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 group">
-            <Flame className="w-7 h-7 text-secondary-light group-hover:text-secondary transition-colors" />
+            <Flame className="w-7 h-7 text-secondary-light group-hover:text-secondary transition-colors" strokeWidth={1.5} />
             <span className="text-lg font-bold text-white">
               Revival Grace
             </span>
@@ -50,7 +50,7 @@ export default function Navbar() {
             className="md:hidden text-white p-2"
             aria-label="Toggle menu"
           >
-            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {open ? <X className="w-6 h-6" strokeWidth={1.5} /> : <Menu className="w-6 h-6" strokeWidth={1.5} />}
           </button>
         </div>
       </div>

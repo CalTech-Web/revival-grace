@@ -48,7 +48,7 @@ export default function StatementOfBeliefPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <BookOpen className="w-12 h-12 text-secondary-light mx-auto mb-6" />
+            <BookOpen className="w-12 h-12 text-secondary-light mx-auto mb-6" strokeWidth={1.5} />
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Statement of Belief
             </h1>
@@ -72,7 +72,7 @@ export default function StatementOfBeliefPage() {
                 className="p-8 rounded-2xl bg-warm-gray border border-gray-100"
               >
                 <h3 className="text-xl font-bold text-dark mb-3">{belief.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{belief.content}</p>
+                <p className="text-text leading-relaxed">{belief.content}</p>
               </motion.div>
             ))}
           </div>

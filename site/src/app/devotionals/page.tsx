@@ -74,7 +74,7 @@ export default function DevotionalsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <BookOpen className="w-12 h-12 text-secondary-light mx-auto mb-6" />
+            <BookOpen className="w-12 h-12 text-secondary-light mx-auto mb-6" strokeWidth={1.5} />
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Devotionals
             </h1>
@@ -91,7 +91,7 @@ export default function DevotionalsPage() {
             <h2 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
               Join Our Community of Faith-Filled Readers
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-text max-w-2xl mx-auto">
               Access devotionals and be the first to get weekly spiritual insights that strengthen your walk and financial wisdom.
             </p>
           </div>
@@ -107,9 +107,9 @@ export default function DevotionalsPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className={`rounded-2xl p-8 bg-gradient-to-br ${cat.color} border border-gray-100 hover:shadow-lg transition-shadow`}
               >
-                <cat.icon className={`w-10 h-10 ${cat.iconColor} mb-5`} />
+                <cat.icon className={`w-10 h-10 ${cat.iconColor} mb-5`} strokeWidth={1.5} />
                 <h3 className="text-xl font-bold text-dark mb-3">{cat.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-text text-sm leading-relaxed">
                   {cat.description}
                 </p>
               </motion.div>
@@ -126,14 +126,14 @@ export default function DevotionalsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Flame className="w-12 h-12 text-secondary mx-auto mb-6" />
+            <Flame className="w-12 h-12 text-secondary mx-auto mb-6" strokeWidth={1.5} />
             <h2 className="text-3xl font-bold text-dark mb-4">
               The Flame of Revival eBook
             </h2>
-            <p className="text-lg text-gray-600 mb-4">
+            <p className="text-lg text-text mb-4">
               Ignite Your Faith with a Powerful Guide to Spiritual Awakening
             </p>
-            <p className="text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+            <p className="text-text leading-relaxed mb-8 max-w-2xl mx-auto">
               Discover deep spiritual insights and timeless truths in The Flame of Revival, a free eBook written to awaken your heart and strengthen your walk with God. Pastor Ewang Nelson shares powerful revelations that inspire growth, renewal, and an unshakable faith.
             </p>
             <Link

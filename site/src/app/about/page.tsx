@@ -36,7 +36,7 @@ export default function AboutPage() {
               <div className="w-full aspect-square bg-gradient-to-br from-primary/20 to-dark-light/20 rounded-2xl flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-40 h-40 rounded-full bg-primary/30 mx-auto mb-6 flex items-center justify-center">
-                    <BookOpen className="w-20 h-20 text-primary" />
+                    <BookOpen className="w-20 h-20 text-primary" strokeWidth={1.5} />
                   </div>
                   <p className="text-dark font-bold text-xl">Pastor Ewang Nelson</p>
                   <p className="text-gray-500">Founder & Senior Pastor</p>
@@ -53,16 +53,16 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-dark mb-6">
                 Meet Pastor Ewang Nelson
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-text leading-relaxed mb-4">
                 My name is Pastor Ewang Nelson, and it&apos;s a pleasure to connect with you as a fellow believer. Like you, I am dedicated to my faith and have been blessed with a ministry and some spiritual gifts.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-text leading-relaxed mb-4">
                 I find great joy in meditating and writing books, but above all, I have a profound belief in the revival of the Word, a promise that prophets have echoed throughout these extraordinary times.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-text leading-relaxed mb-4">
                 I believe the Holy Spirit is beginning to reveal the remarkable plans He has been nurturing secretly for many years. I invite you to join me on this journey of faith and discovery!
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-text leading-relaxed">
                 Learning is the first step in the Christian Revival.
               </p>
             </motion.div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-dark mb-4">Our Mission</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-text max-w-2xl mx-auto leading-relaxed">
               Revival Grace Ministry is a Christ-centered community devoted to teaching the Word, nurturing spiritual growth, and guiding believers toward purposeful living.
             </p>
           </div>
@@ -94,9 +94,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="text-center p-8 bg-white rounded-2xl shadow-sm"
               >
-                <item.icon className="w-10 h-10 text-accent mx-auto mb-4" />
+                <item.icon className="w-10 h-10 text-accent mx-auto mb-4" strokeWidth={1.5} />
                 <h3 className="text-lg font-bold text-dark mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
+                <p className="text-text text-sm">{item.desc}</p>
               </motion.div>
             ))}
           </div>

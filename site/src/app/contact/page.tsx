@@ -45,7 +45,7 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Mail className="w-12 h-12 text-secondary-light mx-auto mb-6" />
+            <Mail className="w-12 h-12 text-secondary-light mx-auto mb-6" strokeWidth={1.5} />
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Contact Us
             </h1>
@@ -66,9 +66,9 @@ export default function ContactPage() {
           >
             {status === "sent" ? (
               <div className="text-center py-12">
-                <CheckCircle className="w-16 h-16 text-accent mx-auto mb-6" />
+                <CheckCircle className="w-16 h-16 text-accent mx-auto mb-6" strokeWidth={1.5} />
                 <h2 className="text-2xl font-bold text-dark mb-4">Message Sent!</h2>
-                <p className="text-gray-600">
+                <p className="text-text">
                   Thank you for reaching out. We will get back to you as soon as possible. God bless you!
                 </p>
               </div>
@@ -130,7 +130,7 @@ export default function ContactPage() {
                   disabled={status === "sending"}
                   className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors disabled:opacity-50"
                 >
-                  <Send className="w-4 h-4" />
+                  <Send className="w-4 h-4" strokeWidth={1.5} />
                   {status === "sending" ? "Sending..." : "Send Message"}
                 </button>
               </form>

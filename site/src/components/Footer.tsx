@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Flame className="w-6 h-6 text-secondary-light" />
+              <Flame className="w-6 h-6 text-secondary-light" strokeWidth={1.5} />
               <span className="text-lg font-bold text-white">Revival Grace Ministry</span>
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
