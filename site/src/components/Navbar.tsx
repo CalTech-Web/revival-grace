@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Flame } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -21,7 +22,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 group">
-            <Flame className="w-7 h-7 text-secondary-light group-hover:text-secondary transition-colors" strokeWidth={1.5} />
+            <Image
+              src="/images/logo.jpg"
+              alt="Revival Grace Ministry"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
             <span className="text-lg font-bold text-white">
               Revival Grace
             </span>

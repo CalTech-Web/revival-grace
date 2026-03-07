@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Flame } from "lucide-react";
+import Image from "next/image";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -30,8 +30,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Flame className="w-6 h-6 text-secondary-light" strokeWidth={1.5} />
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/images/favicon.png"
+                alt="Revival Grace Ministry"
+                width={36}
+                height={36}
+                className="rounded-full"
+              />
               <span className="text-lg font-bold text-white">Revival Grace Ministry</span>
             </div>
             <p className="text-sm leading-relaxed text-gray-400">

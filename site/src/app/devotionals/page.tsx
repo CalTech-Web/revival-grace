@@ -2,67 +2,29 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BookOpen, DollarSign, Heart, Flame, Shield, Cross, HandHelping } from "lucide-react";
+import { BookOpen, DollarSign, Heart, Flame, Shield, Cross, HandHelping, ChevronRight } from "lucide-react";
+import { categories, getDevotionalsByCategory } from "@/data/devotionals";
 import NewsletterSection from "@/components/NewsletterSection";
 
-const categories = [
-  {
-    id: "financial-breakthrough",
-    icon: DollarSign,
-    title: "Bible Guide to Financial Breakthrough",
-    description: "Discover biblical principles for financial wisdom and breakthrough. God's Word provides a roadmap for stewardship, generosity, and provision.",
-    color: "from-green-500/20 to-green-600/10",
-    iconColor: "text-green-600",
-  },
-  {
-    id: "christian-living",
-    icon: Heart,
-    title: "Christian Living",
-    description: "Practical guidance for daily Christian life. Learn how to walk in faith, love others well, and live out your calling with purpose and joy.",
-    color: "from-pink-500/20 to-pink-600/10",
-    iconColor: "text-pink-600",
-  },
-  {
-    id: "christian-ministry",
-    icon: HandHelping,
-    title: "Christian Ministry",
-    description: "Resources for those called to serve. Whether you lead a church, a small group, or serve behind the scenes, these devotionals equip you for effective ministry.",
-    color: "from-blue-500/20 to-blue-600/10",
-    iconColor: "text-blue-600",
-  },
-  {
-    id: "faith-holy-spirit",
-    icon: Flame,
-    title: "Faith & Holy Spirit",
-    description: "Deepen your understanding of faith and the work of the Holy Spirit. These devotionals explore the Spirit's gifts, guidance, and transforming power in the believer's life.",
-    color: "from-secondary/20 to-secondary-light/10",
-    iconColor: "text-secondary",
-  },
-  {
-    id: "demonic-oppressions",
-    icon: Shield,
-    title: "Free From Demonic Oppressions",
-    description: "Find freedom and victory through Christ. These resources address spiritual warfare, deliverance, and standing firm in the authority given to believers.",
-    color: "from-red-500/20 to-red-600/10",
-    iconColor: "text-red-600",
-  },
-  {
-    id: "holiness",
-    icon: Cross,
-    title: "Ultimate Guide to Holiness",
-    description: "A comprehensive guide to living a holy life. Holiness is not about perfection but about a heart fully surrendered to God and set apart for His purposes.",
-    color: "from-primary/20 to-primary-light/10",
-    iconColor: "text-primary",
-  },
-  {
-    id: "prayer-fasting",
-    icon: BookOpen,
-    title: "Understanding Prayer and Fasting",
-    description: "Unlock the power of prayer and fasting. Learn how these spiritual disciplines transform your relationship with God and release His power in your life.",
-    color: "from-indigo-500/20 to-indigo-600/10",
-    iconColor: "text-indigo-600",
-  },
-];
+const categoryIcons: Record<string, typeof BookOpen> = {
+  "bible-guide-to-financial-breakthrough": DollarSign,
+  "christian-living": Heart,
+  "christian-ministry": HandHelping,
+  "faith-and-holy-spirit": Flame,
+  "free-from-demonic-oppressions": Shield,
+  "ultimate-guide-to-holiness": Cross,
+  "understanding-prayer-and-fasting": BookOpen,
+};
+
+const categoryColors: Record<string, { bg: string; icon: string }> = {
+  "bible-guide-to-financial-breakthrough": { bg: "from-green-500/20 to-green-600/10", icon: "text-green-600" },
+  "christian-living": { bg: "from-pink-500/20 to-pink-600/10", icon: "text-pink-600" },
+  "christian-ministry": { bg: "from-blue-500/20 to-blue-600/10", icon: "text-blue-600" },
+  "faith-and-holy-spirit": { bg: "from-secondary/20 to-secondary-light/10", icon: "text-secondary" },
+  "free-from-demonic-oppressions": { bg: "from-red-500/20 to-red-600/10", icon: "text-red-600" },
+  "ultimate-guide-to-holiness": { bg: "from-primary/20 to-primary-light/10", icon: "text-primary" },
+  "understanding-prayer-and-fasting": { bg: "from-indigo-500/20 to-indigo-600/10", icon: "text-indigo-600" },
+};
 
 export default function DevotionalsPage() {
   return (
@@ -96,24 +58,48 @@ export default function DevotionalsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {categories.map((cat, i) => (
-              <motion.div
-                key={cat.id}
-                id={cat.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`rounded-2xl p-8 bg-gradient-to-br ${cat.color} border border-gray-100 hover:shadow-lg transition-shadow`}
-              >
-                <cat.icon className={`w-10 h-10 ${cat.iconColor} mb-5`} strokeWidth={1.5} />
-                <h3 className="text-xl font-bold text-dark mb-3">{cat.title}</h3>
-                <p className="text-text text-sm leading-relaxed">
-                  {cat.description}
-                </p>
-              </motion.div>
-            ))}
+          <div className="space-y-16">
+            {categories.map((cat, i) => {
+              const Icon = categoryIcons[cat.slug] || BookOpen;
+              const colors = categoryColors[cat.slug] || { bg: "from-gray-500/20 to-gray-600/10", icon: "text-gray-600" };
+              const posts = getDevotionalsByCategory(cat.slug);
+
+              return (
+                <motion.div
+                  key={cat.slug}
+                  id={cat.slug}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                >
+                  <div className={`rounded-2xl p-8 bg-gradient-to-br ${colors.bg} border border-gray-100`}>
+                    <div className="flex items-center gap-4 mb-4">
+                      <Icon className={`w-8 h-8 ${colors.icon}`} strokeWidth={1.5} />
+                      <h3 className="text-2xl font-bold text-dark">{cat.name}</h3>
+                    </div>
+                    <p className="text-text text-sm leading-relaxed mb-6 max-w-3xl">
+                      {cat.description}
+                    </p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {posts.map((post) => (
+                        <Link
+                          key={post.slug}
+                          href={`/devotionals/${post.slug}`}
+                          className="flex items-center gap-3 p-4 bg-white/70 rounded-xl hover:bg-white hover:shadow-sm transition-all group"
+                        >
+                          <ChevronRight className={`w-4 h-4 ${colors.icon} shrink-0 group-hover:translate-x-0.5 transition-transform`} strokeWidth={1.5} />
+                          <span className="text-sm font-medium text-dark group-hover:text-secondary transition-colors">
+                            {post.title}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
