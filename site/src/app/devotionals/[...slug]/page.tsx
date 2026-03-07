@@ -74,6 +74,26 @@ export default async function DevotionalPage({ params }: Props) {
 
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 pb-8 border-b border-black/10 text-sm text-black/50 space-y-3">
+            <p className="font-medium text-black/60">By Mfortaw, Ewang Nelson</p>
+            <p>Copyright &copy; 2014 by Mfortaw, Ewang Nelson.</p>
+            <div>
+              <p className="font-medium text-black/60 mb-1">SCRIPTURE QUOTATIONS MARKED</p>
+              <p>
+                Scripture quotations marked (NIV) are taken from the Holy Bible, New International Version&reg;, NIV&reg;. Copyright &copy; 1973, 1978, 1984 by International Bible Society. Used by Permission of Zondervan. All rights reserved worldwide, www.zondervan.com.
+              </p>
+              <p className="mt-2">
+                Unless otherwise indicated, all other quotations from scripture have been taken from the Holy Bible, Authorized King James Version&reg;.
+              </p>
+            </div>
+            <p>
+              These devotionals are designed for Christians. If you still need to become a Christian, we encourage you to download our free e-book,{" "}
+              <Link href="/contact" className="text-accent hover:text-accent-light underline transition-colors">
+                The Flame of Revival
+              </Link>.
+            </p>
+          </div>
+
           <article className="prose prose-lg max-w-none">
             {paragraphs.map((paragraph, i) => (
               <p key={i} className="text-text leading-relaxed mb-6">
