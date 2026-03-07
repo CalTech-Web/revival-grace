@@ -53,19 +53,19 @@ export default function DevotionalOfWeek() {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-dark/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-dark/10" />
                 <div className="absolute bottom-4 left-4 lg:hidden">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-dark">
+                  <Link href={`/devotionals#${latest.categorySlug}`} className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-dark hover:bg-white transition-colors">
                     <BookOpen className="w-3.5 h-3.5" strokeWidth={1.5} />
                     {latest.categoryName}
-                  </span>
+                  </Link>
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-8 lg:p-10 flex flex-col justify-center">
-                <span className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1 bg-secondary/10 rounded-full text-xs font-medium text-secondary w-fit mb-5">
+                <Link href={`/devotionals#${latest.categorySlug}`} className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1 bg-secondary/10 rounded-full text-xs font-medium text-secondary w-fit mb-5 hover:bg-secondary/20 transition-colors">
                   <BookOpen className="w-3.5 h-3.5" strokeWidth={1.5} />
                   {latest.categoryName}
-                </span>
+                </Link>
                 <h3 className="text-2xl sm:text-3xl font-bold text-dark mb-4 leading-tight">
                   {latest.title}
                 </h3>
