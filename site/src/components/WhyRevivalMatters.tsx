@@ -22,7 +22,7 @@ export default function WhyRevivalMatters() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+            <h2 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
               Why Revival Matters
             </h2>
             <h3 className="text-3xl sm:text-4xl font-bold text-dark mb-6">
@@ -44,7 +44,7 @@ export default function WhyRevivalMatters() {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="text-center p-6 rounded-xl bg-warm-gray"
             >
-              <point.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+              <point.icon className="w-8 h-8 text-accent mx-auto mb-3" />
               <p className="text-dark font-medium text-sm">{point.text}</p>
             </motion.div>
           ))}
@@ -62,7 +62,7 @@ export default function WhyRevivalMatters() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors"
+            className="inline-block px-8 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors"
           >
             Contact Us
           </Link>

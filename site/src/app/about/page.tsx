@@ -94,7 +94,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="text-center p-8 bg-white rounded-2xl shadow-sm"
               >
-                <item.icon className="w-10 h-10 text-primary mx-auto mb-4" />
+                <item.icon className="w-10 h-10 text-accent mx-auto mb-4" />
                 <h3 className="text-lg font-bold text-dark mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </motion.div>
@@ -110,7 +110,7 @@ export default function AboutPage() {
             <blockquote className="text-lg text-gray-700 italic leading-relaxed mb-4">
               &ldquo;I have a profound belief in the revival of the Word, a promise that prophets have echoed throughout these extraordinary times. I believe the Holy Spirit is beginning to reveal the remarkable plans He has been nurturing secretly for many years.&rdquo;
             </blockquote>
-            <p className="text-right text-primary font-semibold">
+            <p className="text-right text-secondary font-semibold">
               Pastor Ewang Nelson
             </p>
           </div>

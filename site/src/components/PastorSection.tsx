@@ -32,7 +32,7 @@ export default function PastorSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+            <h2 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
               Embracing Revival, Walking in Truth
             </h2>
             <h3 className="text-3xl sm:text-4xl font-bold text-dark mb-6">
@@ -49,7 +49,7 @@ export default function PastorSection() {
             </p>
             <Link
               href="/about"
-              className="inline-block px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors"
+              className="inline-block px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors"
             >
               Read More
             </Link>

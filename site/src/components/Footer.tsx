@@ -99,7 +99,7 @@ export default function Footer() {
           </p>
           <p className="text-sm text-gray-500">
             Powered by{" "}
-            <a href="https://caltechweb.com" target="_blank" rel="noopener noreferrer" className="text-primary-light hover:text-primary transition-colors">
+            <a href="https://caltechweb.com" target="_blank" rel="noopener noreferrer" className="text-secondary-light hover:text-white transition-colors">
               CalTech Web
             </a>
           </p>

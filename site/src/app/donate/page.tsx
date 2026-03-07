@@ -50,7 +50,7 @@ export default function DonatePage() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="p-6 rounded-xl bg-warm-gray text-center"
               >
-                <item.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                <item.icon className="w-8 h-8 text-accent mx-auto mb-3" />
                 <h3 className="font-bold text-dark mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </motion.div>

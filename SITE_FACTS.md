@@ -151,10 +151,16 @@
 
 | Element | Value |
 |---|---|
-| **Primary Colors** | To be determined from site (likely warm tones, golds, deep purples or blues typical of ministry sites) |
-| **Typography** | To be determined |
-| **Logo** | Revival Grace Ministry logo (to be downloaded) |
-| **Brand Feel** | Warm, inviting, spiritual, faith-centered |
+| **Primary (Dark Navy)** | #272935 (headings, dark backgrounds, navbar) |
+| **Secondary (Brown)** | #5D3222 (section labels, accents) |
+| **Secondary Light (Peach)** | #FFBC7D (warm accents, hover states on dark backgrounds) |
+| **Accent (Forest Green)** | #228B22 (CTA buttons, interactive elements) |
+| **Text** | #4D4D4D (body text) |
+| **Light Background** | #EFEEF3 (section backgrounds) |
+| **Cream** | #FFF9F0 (warm light sections) |
+| **Typography** | Geist Sans |
+| **Logo** | Revival Grace Ministry logo (flame icon + text) |
+| **Brand Feel** | Warm, earthy, inviting, spiritual, faith-centered |
 
 ---
 

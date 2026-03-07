@@ -88,7 +88,7 @@ export default function DevotionalsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+            <h2 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
               Join Our Community of Faith-Filled Readers
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -138,7 +138,7 @@ export default function DevotionalsPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-secondary-light hover:text-dark transition-colors"
+              className="inline-block px-8 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors"
             >
               Download FREE eBook
             </Link>

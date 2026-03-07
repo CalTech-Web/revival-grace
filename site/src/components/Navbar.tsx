@@ -39,7 +39,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="ml-2 px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
+              className="ml-2 px-4 py-2 bg-accent text-white text-sm font-medium rounded-lg hover:bg-accent-light transition-colors"
             >
               Get In Touch
             </Link>
@@ -71,7 +71,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="block mt-3 px-4 py-2 bg-primary text-white text-center text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
+              className="block mt-3 px-4 py-2 bg-accent text-white text-center text-sm font-medium rounded-lg hover:bg-accent-light transition-colors"
             >
               Get In Touch
             </Link>

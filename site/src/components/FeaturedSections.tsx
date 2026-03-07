@@ -22,8 +22,8 @@ const features = [
       "Pastor Ewang Nelson and Revival Grace Ministry believe in a present-day revival, echoing the calls of prophets throughout history. Join us on a journey of faith and discovery as the Holy Spirit unveils His plans for our time. Learning is the vital first step in this Christian revival.",
     cta: "Read More",
     href: "/about",
-    color: "from-primary/20 to-primary-light/10",
-    iconColor: "text-primary",
+    color: "from-secondary/10 to-secondary-light/10",
+    iconColor: "text-secondary",
   },
   {
     icon: Heart,
@@ -58,7 +58,7 @@ export default function FeaturedSections() {
               </p>
               <Link
                 href={feature.href}
-                className="text-sm font-semibold text-primary hover:text-primary-dark transition-colors"
+                className="text-sm font-semibold text-accent hover:text-accent-light transition-colors"
               >
                 {feature.cta} &rarr;
               </Link>
