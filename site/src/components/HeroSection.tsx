@@ -24,13 +24,13 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-secondary-light text-sm sm:text-base font-medium tracking-wide mb-4">
+            <p className="text-white/70 text-sm sm:text-base font-medium tracking-wide mb-4">
               Welcome to Revival Grace Ministry
             </p>
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
               Igniting a Revival{" "}
-              <span className="text-secondary-light">of the Word</span>
+              <span className="text-accent-light">of the Word</span>
             </h1>
 
             <p className="text-lg text-white/60 max-w-xl mb-10 leading-relaxed">

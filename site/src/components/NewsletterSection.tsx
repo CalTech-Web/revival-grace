@@ -23,7 +23,7 @@ export default function NewsletterSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Mail className="w-8 h-8 text-secondary-light mx-auto mb-5" strokeWidth={1.5} />
+          <Mail className="w-8 h-8 text-white/70 mx-auto mb-5" strokeWidth={1.5} />
 
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Stay Connected in Faith

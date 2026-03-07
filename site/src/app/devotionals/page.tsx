@@ -20,7 +20,7 @@ const categoryColors: Record<string, { bg: string; icon: string }> = {
   "bible-guide-to-financial-breakthrough": { bg: "from-green-500/20 to-green-600/10", icon: "text-green-600" },
   "christian-living": { bg: "from-pink-500/20 to-pink-600/10", icon: "text-pink-600" },
   "christian-ministry": { bg: "from-blue-500/20 to-blue-600/10", icon: "text-blue-600" },
-  "faith-and-holy-spirit": { bg: "from-secondary/20 to-secondary-light/10", icon: "text-secondary" },
+  "faith-and-holy-spirit": { bg: "from-secondary/20 to-secondary/10", icon: "text-secondary" },
   "free-from-demonic-oppressions": { bg: "from-red-500/20 to-red-600/10", icon: "text-red-600" },
   "ultimate-guide-to-holiness": { bg: "from-primary/20 to-primary-light/10", icon: "text-primary" },
   "understanding-prayer-and-fasting": { bg: "from-indigo-500/20 to-indigo-600/10", icon: "text-indigo-600" },

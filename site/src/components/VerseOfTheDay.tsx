@@ -84,11 +84,11 @@ export default function VerseOfTheDay() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-flex items-center gap-2 mb-4">
-            <Calendar className="w-4 h-4 text-secondary-light/70" strokeWidth={1.5} />
-            <p className="text-sm text-secondary-light/70">{dateString}</p>
+            <Calendar className="w-4 h-4 text-white/60" strokeWidth={1.5} />
+            <p className="text-sm text-white/60">{dateString}</p>
           </div>
 
-          <h2 className="text-sm font-semibold text-secondary-light uppercase tracking-wider mb-8">
+          <h2 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-8">
             Verse of the Day
           </h2>
 
@@ -96,7 +96,7 @@ export default function VerseOfTheDay() {
             &ldquo;{todayVerse.text}&rdquo;
           </blockquote>
 
-          <p className="text-secondary-light font-semibold text-lg">
+          <p className="text-accent-light font-semibold text-lg">
             {todayVerse.ref}
           </p>
         </motion.div>

@@ -57,14 +57,14 @@ export default async function DevotionalPage({ params }: Props) {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/devotionals"
-            className="inline-flex items-center gap-2 text-sm text-secondary-light/70 hover:text-secondary-light transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
             Back to Devotionals
           </Link>
           <div className="flex items-center gap-2 mb-4">
-            <BookOpen className="w-5 h-5 text-secondary-light/60" strokeWidth={1.5} />
-            <span className="text-sm text-secondary-light/60">{category?.name}</span>
+            <BookOpen className="w-5 h-5 text-white/60" strokeWidth={1.5} />
+            <span className="text-sm text-white/60">{category?.name}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
             {devotional.title}
@@ -114,7 +114,7 @@ export default async function DevotionalPage({ params }: Props) {
                     href={`/devotionals/${d.slug}`}
                     className={`block p-4 rounded-lg transition-colors ${
                       d.slug === devotional.slug
-                        ? "bg-secondary-light/10 border border-secondary-light/20"
+                        ? "bg-accent/10 border border-accent/20"
                         : "bg-black/5 hover:bg-black/10"
                     }`}
                   >

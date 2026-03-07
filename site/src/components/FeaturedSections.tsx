@@ -12,7 +12,7 @@ const features = [
       "Pastor Ewang Nelson Mfortaw passionately calls believers to embrace a transformative revival. This book, reflecting the core message of Revival Grace Ministry, invites you to discover the Holy Spirit\u2019s plans for our time and the vital role of learning in this Christian revival.",
     cta: "Download FREE eBook",
     href: "/devotionals",
-    borderColor: "border-t-secondary-light",
+    borderColor: "border-t-secondary",
   },
   {
     icon: BookOpen,
