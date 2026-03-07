@@ -5,6 +5,7 @@ export interface Devotional {
   categoryName: string;
   excerpt: string;
   content: string;
+  image: string;
 }
 
 export interface Category {
@@ -58,6 +59,7 @@ export const devotionals: Devotional[] = [
     slug: "do-not-worry-about-tomorrow",
     categorySlug: "bible-guide-to-financial-breakthrough",
     categoryName: "Bible Guide to Financial Breakthrough",
+    image: "/images/devotionals/do-not-worry-about-tomorrow.jpg",
     excerpt: "Therefore, do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own. (Matthew 6:34, NIV)",
     content: `The devotional opens with Matthew 6:34 (NIV): "Therefore, do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own."
 
@@ -76,6 +78,7 @@ Prayer: A brief concluding prayer requesting grace to avoid anxiety while workin
     slug: "invest-wisely",
     categorySlug: "bible-guide-to-financial-breakthrough",
     categoryName: "Bible Guide to Financial Breakthrough",
+    image: "/images/devotionals/invest-wisely.jpg",
     excerpt: "Cast your bread upon the waters, for you will find it after many days. Invest in seven ventures, yes, in eight. (Ecclesiastes 11:1-2, NIV)",
     content: `The devotional opens with a Scripture reference from Ecclesiastes 11:1-2 (NIV): "Cast your bread upon the waters, for you will find it after many days. Invest in seven ventures, yes, in eight; you do not know what may come upon the land."
 
@@ -92,6 +95,7 @@ Prayer Section: The devotional concludes with a prayer titled "Lord, multiply my
   {
     title: "A Season for Everything: Understanding Life's Perfect Timing",
     slug: "a-time-for-planting-a-time-for-harvesting",
+    image: "/images/devotionals/a-time-for-planting.jpg",
     categorySlug: "bible-guide-to-financial-breakthrough",
     categoryName: "Bible Guide to Financial Breakthrough",
     excerpt: "There is a time for everything, a season for every activity under the heavens. (Ecclesiastes 3:1, NIV)",
@@ -109,6 +113,7 @@ The devotional concludes with a psalm expressing trust in God's timing, contentm
   {
     title: "The Four Bible Rules of Money: Work, Save, Invest, and Spend Wisely",
     slug: "work-save-and-spend-wisely",
+    image: "/images/devotionals/work-save-spend-wisely.jpg",
     categorySlug: "bible-guide-to-financial-breakthrough",
     categoryName: "Bible Guide to Financial Breakthrough",
     excerpt: "Ants are creatures of little strength, yet they store up their food in the summer. (Proverbs 30:25, NIV)",
@@ -131,6 +136,7 @@ Concluding Prayer (Psalm): A personal prayer asking God for guidance in financia
   {
     title: "Earthly Wealth, Heavenly Gain: Unlocking God's Favour",
     slug: "earthly-wealth-heavenly-gain-unlocking-gods-favour",
+    image: "/images/devotionals/earthly-wealth-heavenly-gain.jpg",
     categorySlug: "bible-guide-to-financial-breakthrough",
     categoryName: "Bible Guide to Financial Breakthrough",
     excerpt: "But store up for yourselves treasures in heaven, where moths and vermin do not destroy, and where thieves do not break in and steal. (Matthew 6:20, NIV)",
@@ -151,6 +157,7 @@ The Psalm Section provides a prayer expressing gratitude for God's grace, highli
   {
     title: "Helping Needy People: Give Hope, Give Love, Give Help",
     slug: "helping-needy-people",
+    image: "/images/devotionals/helping-needy-people.jpg",
     categorySlug: "christian-living",
     categoryName: "Christian Living",
     excerpt: "For the poor will never cease from the land; therefore I command you, saying, 'You shall open your hand wide to your brother.' (Deuteronomy 15:11, NKJV)",
@@ -177,6 +184,7 @@ Psalm: All is Vanity, The final section presents a reflective psalm emphasizing 
   {
     title: "How to Find Happiness: Secrets No One Told You",
     slug: "how-to-find-happiness-secrets-no-one-told-you",
+    image: "/images/devotionals/how-to-find-happiness.jpg",
     categorySlug: "christian-living",
     categoryName: "Christian Living",
     excerpt: "Keep your lives free from the love of money and be content with what you have, because God has said, 'Never will I leave you; never will I forsake you.' (Hebrews 13:5, NIV)",
@@ -197,6 +205,7 @@ A personal psalm follows, reflecting on how greed destroyed family unity, replac
   {
     title: "Prosperity Theology: Stop Believing the Lies and Hear the Truth",
     slug: "prosperity-theology",
+    image: "/images/devotionals/prosperity-theology.jpg",
     categorySlug: "christian-ministry",
     categoryName: "Christian Ministry",
     excerpt: "My wrath is aroused against you and your two friends, for you have not spoken of Me what is right, as My servant Job has. (Job 42:7, NKJV)",
@@ -225,6 +234,7 @@ The content concludes with a psalm titled "God of My Breakthroughs," offering af
   {
     title: "Trust in the Lord: How Faith Changes Everything",
     slug: "trust-in-the-lord",
+    image: "/images/devotionals/trust-in-the-lord.jpg",
     categorySlug: "faith-and-holy-spirit",
     categoryName: "Faith & Holy Spirit",
     excerpt: "Some trust in chariots, and some trust in horses, but we will remember the name of our God. (Psalms 20:7, NKJV)",
@@ -243,6 +253,7 @@ The second section titled "Psalms: The Lord is My Strength" contains a personal 
   {
     title: "Be Still: When Life Feels Out of Control, God Is Not",
     slug: "bestill-when-life-feels-out-of-control-god-is-not",
+    image: "/images/devotionals/be-still.jpg",
     categorySlug: "faith-and-holy-spirit",
     categoryName: "Faith & Holy Spirit",
     excerpt: "Why are you fearful, O you of little Faith (Matthew 8:24-26, NIV)",
@@ -261,6 +272,7 @@ The devotional concludes by affirming that one should "be still, not because lif
   {
     title: "Healing Rain: A Message of Comfort for the Sick and Weak",
     slug: "healing-rain-a-message-of-comfort-for-the-sick-and-weak",
+    image: "/images/devotionals/healing-rain.jpg",
     categorySlug: "faith-and-holy-spirit",
     categoryName: "Faith & Holy Spirit",
     excerpt: "He sent out His word and healed them; He rescued them from the grave. (Psalms 107:20, NIV)",
@@ -281,6 +293,7 @@ Closing Psalm: A personal prayer follows, addressing God as "my Refuge" and ackn
   {
     title: "Free From Demonic Oppressions",
     slug: "free-from-demonic-oppressions",
+    image: "/images/devotionals/free-from-demonic-oppressions.jpg",
     categorySlug: "free-from-demonic-oppressions",
     categoryName: "Free From Demonic Oppressions",
     excerpt: "A devotional series exploring spiritual warfare, deliverance, and standing firm in the authority given to believers through Christ.",
@@ -297,6 +310,7 @@ Navigate through the days using the links below to explore each lesson in depth.
   {
     title: "Day 1: Free From Genealogy",
     slug: "free-from-demonic-oppressions/day-1-free-from-genealogy",
+    image: "/images/devotionals/day-1-free-from-genealogy.jpg",
     categorySlug: "free-from-demonic-oppressions",
     categoryName: "Free From Demonic Oppressions",
     excerpt: "Genealogy functions as a family tree connecting all individuals to their ancestry. Every person inherits characteristics from parents, creating spiritual and physical links.",
@@ -313,6 +327,7 @@ The devotional concludes that Christians must understand their identity in Chris
   {
     title: "Day 2: Water Baptism",
     slug: "free-from-demonic-oppressions/day-2-water-baptism",
+    image: "/images/devotionals/day-2-water-baptism.jpg",
     categorySlug: "free-from-demonic-oppressions",
     categoryName: "Free From Demonic Oppressions",
     excerpt: "The devotional examines the significance of water baptism through the lens of Israel's exodus from Egypt and Jesus's own baptism.",
@@ -329,6 +344,7 @@ The conclusion celebrates water baptism as transformation, where "the guilty sou
   {
     title: "Day 3: Free From Demonic Activities",
     slug: "free-from-demonic-oppressions/day-3-free-from-demonic-activities",
+    image: "/images/devotionals/day-3-free-from-demonic-activities.jpg",
     categorySlug: "free-from-demonic-oppressions",
     categoryName: "Free From Demonic Oppressions",
     excerpt: "Understanding how Christ's sacrifice breaks demonic claims and gives believers authority over spiritual forces.",
@@ -347,6 +363,7 @@ The concluding message encourages believers to recognize their renewed identity 
   {
     title: "Day 4: End-of-Course Quiz",
     slug: "free-from-demonic-oppressions/day-4-end-of-course-quiz",
+    image: "/images/devotionals/day-4-demonic-quiz.jpg",
     categorySlug: "free-from-demonic-oppressions",
     categoryName: "Free From Demonic Oppressions",
     excerpt: "Test your understanding of the Free From Demonic Oppressions devotional series with this five-question quiz.",
@@ -363,6 +380,7 @@ The concluding message encourages believers to recognize their renewed identity 
   {
     title: "The Ultimate Guide to Holiness",
     slug: "the-ultimate-guide-to-holiness",
+    image: "/images/devotionals/the-ultimate-guide-to-holiness.jpg",
     categorySlug: "ultimate-guide-to-holiness",
     categoryName: "Ultimate Guide to Holiness",
     excerpt: "Are you struggling with sin? Are you unable to figure out how to overcome it? This resource teaches you how to conquer sin and live a holy life.",
@@ -381,6 +399,7 @@ Navigate through the days using the links below to explore each lesson in depth.
   {
     title: "Day 1: The Glory of Christianity",
     slug: "the-ultimate-guide-to-holiness/day-1-the-glory-of-christianity",
+    image: "/images/devotionals/day-1-glory-of-christianity.jpg",
     categorySlug: "ultimate-guide-to-holiness",
     categoryName: "Ultimate Guide to Holiness",
     excerpt: "Christianity's humble beginnings as 'the sect in Jerusalem' faced religious, cultural, social, and political opposition, yet grew unstoppably due to divine protection.",
@@ -401,6 +420,7 @@ The Believer's Glory: Concluding section portrays Christianity as a spiritual my
   {
     title: "Day 2: The Christian Identity",
     slug: "the-ultimate-guide-to-holiness/day-2-the-christian-identity",
+    image: "/images/devotionals/day-2-christian-identity.jpg",
     categorySlug: "ultimate-guide-to-holiness",
     categoryName: "Ultimate Guide to Holiness",
     excerpt: "Understanding creation, humanity's tripartite nature, and how Christ restores the believer's identity through redemption.",
@@ -427,6 +447,7 @@ The devotional concludes by encouraging believers to embrace their redeemed iden
   {
     title: "Day 3: What is Sin?",
     slug: "the-ultimate-guide-to-holiness/day-3-what-is-sin",
+    image: "/images/devotionals/day-3-what-is-sin.jpg",
     categorySlug: "ultimate-guide-to-holiness",
     categoryName: "Ultimate Guide to Holiness",
     excerpt: "Sin is defined as a transgression, a violation of God's command. Understanding how sin dwells in human nature and how Christ addresses it.",
@@ -449,6 +470,7 @@ The teaching concludes by distinguishing two sin categories:
   {
     title: "Day 4: Sins of the Conscience",
     slug: "the-ultimate-guide-to-holiness/day-4-sin-of-the-conscience",
+    image: "/images/devotionals/day-4-sins-of-conscience.jpg",
     categorySlug: "ultimate-guide-to-holiness",
     categoryName: "Ultimate Guide to Holiness",
     excerpt: "Understanding conscience-based righteousness and how personal convictions shape individual moral frameworks under the new covenant.",
@@ -467,6 +489,7 @@ Key conclusion: Believers should avoid accepting false guilt for actions they di
   {
     title: "Day 5: Sins of the Spirit",
     slug: "the-ultimate-guide-to-holiness/day-5-sins-of-the-spirit",
+    image: "/images/devotionals/day-5-sins-of-spirit.jpg",
     categorySlug: "ultimate-guide-to-holiness",
     categoryName: "Ultimate Guide to Holiness",
     excerpt: "Exploring idolatry and fornication as sins of the spirit, their spiritual consequences, and the path to freedom.",
@@ -485,6 +508,7 @@ The consequences are severe and complex. Sexual relations outside marriage creat
   {
     title: "Day 6: End-of-Course Quiz",
     slug: "the-ultimate-guide-to-holiness/day-6-end-of-course-quiz",
+    image: "/images/devotionals/day-6-holiness-quiz.jpg",
     categorySlug: "ultimate-guide-to-holiness",
     categoryName: "Ultimate Guide to Holiness",
     excerpt: "Test your understanding of The Ultimate Guide to Holiness with this five-question assessment.",
@@ -501,6 +525,7 @@ The consequences are severe and complex. Sexual relations outside marriage creat
   {
     title: "Understanding Prayer and Fasting",
     slug: "understanding-prayer-and-fasting",
+    image: "/images/devotionals/understanding-prayer-and-fasting.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "A comprehensive devotional series exploring the spiritual disciplines of prayer and fasting across 13 days of study.",
@@ -528,6 +553,7 @@ Navigate through the days using the links below to explore each lesson in depth.
   {
     title: "Day 1: The Lord's Prayer",
     slug: "understanding-prayer-and-fasting/day-1-the-lords-prayer",
+    image: "/images/devotionals/pf-day-1-lords-prayer.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "The Lord's Prayer is not just a prayer but a profound guide to communicating with God, teaching believers how to approach the divine.",
@@ -546,6 +572,7 @@ The post concludes with a reflective prompt asking readers to identify which pra
   {
     title: "Day 2: Personal Prayers versus Group Prayers",
     slug: "understanding-prayer-and-fasting/day-2-personal-prayers-versus-group-prayers",
+    image: "/images/devotionals/pf-day-2-personal-vs-group.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "Personal prayers and group prayers are both essential. Group prayers strengthen our relationships, for 'iron sharpens iron.' (Proverbs 27:17 NIV)",
@@ -570,6 +597,7 @@ Many of our prayers would never be answered if that were the case. If you could 
   {
     title: "Day 3: The Spirit of Prayers",
     slug: "understanding-prayer-and-fasting/day-3-the-spirit-of-prayers",
+    image: "/images/devotionals/pf-day-3-spirit-of-prayers.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "The essence of prayer is the sincere concern and yearning for something. It is the trust we have in God for an answer.",
@@ -584,6 +612,7 @@ This burden is not like worldly worries or sadness but an unwavering cry from th
   {
     title: "Day 4: Faith in Prayers",
     slug: "understanding-prayer-and-fasting/day-4-faith-in-prayers",
+    image: "/images/devotionals/pf-day-4-faith-in-prayers.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "Prayer centers on Faith rather than word repetition. God answers based on trust, not volume of speech.",
@@ -606,6 +635,7 @@ Demonic activity occurs continuously, day and night. Sleep when tired rather tha
   {
     title: "Day 5: Prayerlessness",
     slug: "understanding-prayer-and-fasting/day-5-prayerlessness",
+    image: "/images/devotionals/pf-day-5-prayerlessness.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "Prayerlessness describes insufficient prayer according to some Christians, though measuring 'enough' proves challenging.",
@@ -624,6 +654,7 @@ The author recommends praying before sleep and upon waking as acts of reverence 
   {
     title: "Day 6: Suggested Prayer Program for a Fifteen-Minute Retreat",
     slug: "understanding-prayer-and-fasting/day-6-suggested-prayer-program-for-a-fifteen-minute-retreat",
+    image: "/images/devotionals/pf-day-6-prayer-program.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "A structured prayer framework organized by time of day, designed to help believers establish consistent prayer habits.",
@@ -640,6 +671,7 @@ Night Prayer Session (15 minutes): Emphasizes thanksgiving, signs following vari
   {
     title: "Day 7: End-of-Module Quiz",
     slug: "understanding-prayer-and-fasting/day-7-end-of-module-quiz",
+    image: "/images/devotionals/pf-day-7-quiz.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "Test your understanding of the prayer module with five true/false questions.",
@@ -654,6 +686,7 @@ Night Prayer Session (15 minutes): Emphasizes thanksgiving, signs following vari
   {
     title: "Day 8: What is Fasting",
     slug: "understanding-prayer-and-fasting/day-8-what-is-fasting",
+    image: "/images/devotionals/pf-day-8-what-is-fasting.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "Prayer and fasting represent forms of worship and acts of faith within Christianity, rather than sacrificial acts.",
@@ -666,6 +699,7 @@ Fasting functions as worship and fellowship rather than sacrifice. The author re
   {
     title: "Day 9: Types of Fasting",
     slug: "understanding-prayer-and-fasting/day-9-types-of-fasting",
+    image: "/images/devotionals/pf-day-9-types-of-fasting.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "Fasting represents denying oneself certain pleasures as a freewill offering to God. Each person differs in their ability to fast.",
@@ -686,6 +720,7 @@ Group Fasting Considerations: When groups fast collectively, individuals should 
   {
     title: "Day 10: Benefits of Fasting",
     slug: "understanding-prayer-and-fasting/day-10-benefits-of-fasting",
+    image: "/images/devotionals/pf-day-10-benefits-of-fasting.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "Fasting improves our physical and spiritual health. Studies have proven that the correct type of fasting improves health.",
@@ -706,6 +741,7 @@ Put in your all with faith, and God will answer. Your fat belongs to God; use it
   {
     title: "Day 11: Long Fasts",
     slug: "understanding-prayer-and-fasting/day-11-long-fasts",
+    image: "/images/devotionals/pf-day-11-long-fasts.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "Understanding the power and purpose of extended fasting through the example of Daniel's twenty-one day fast.",
@@ -722,6 +758,7 @@ The author concludes that determining when God has answered requires genuine spi
   {
     title: "Day 12: The Right Attitude toward Unanswered Prayers",
     slug: "understanding-prayer-and-fasting/day-12-the-right-attitude-toward-unanswered-prayers",
+    image: "/images/devotionals/pf-day-12-unanswered-prayers.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "Unanswered prayers may indicate being 'at the wrong door' rather than a closed one. Seek the life principle attached to that situation.",
@@ -736,6 +773,7 @@ The devotional concludes that the proper attitude toward prayer involves surrend
   {
     title: "Day 13: End-of-Module Quiz",
     slug: "understanding-prayer-and-fasting/day-13-end-of-module-quiz",
+    image: "/images/devotionals/pf-day-13-quiz.jpg",
     categorySlug: "understanding-prayer-and-fasting",
     categoryName: "Understanding Prayer and Fasting",
     excerpt: "Test your understanding of the fasting module with five true/false questions.",

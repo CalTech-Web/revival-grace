@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, BookOpen } from "lucide-react";
 import { devotionals, getDevotionalBySlug, getDevotionalsByCategory, getCategoryBySlug } from "@/data/devotionals";
 import type { Metadata } from "next";
@@ -40,8 +41,20 @@ export default async function DevotionalPage({ params }: Props) {
 
   return (
     <>
-      <section className="py-20 bg-gradient-to-br from-dark via-dark-light to-primary-dark">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-gradient-to-br from-dark via-dark-light to-primary-dark overflow-hidden">
+        {devotional.image && (
+          <>
+            <Image
+              src={devotional.image}
+              alt=""
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-dark/75" />
+          </>
+        )}
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/devotionals"
             className="inline-flex items-center gap-2 text-sm text-secondary-light/70 hover:text-secondary-light transition-colors mb-8"
