@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Quote, Calendar } from "lucide-react";
 
@@ -65,21 +66,16 @@ export default function VerseOfTheDay() {
   }, []);
 
   return (
-    <section className="relative py-24 bg-dark overflow-hidden">
-      {/* Background graphics */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-secondary-light/4 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 right-1/3 w-[400px] h-[400px] bg-accent/3 rounded-full blur-[80px]" />
-        <svg className="absolute inset-0 w-full h-full opacity-[0.025]" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="verse-crosses" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
-              <line x1="24" y1="20" x2="24" y2="28" stroke="white" strokeWidth="0.5" />
-              <line x1="20" y1="24" x2="28" y2="24" stroke="white" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#verse-crosses)" />
-        </svg>
-      </div>
+    <section className="relative py-24 overflow-hidden">
+      {/* Background image */}
+      <Image
+        src="/images/verse-bg.jpg"
+        alt=""
+        fill
+        className="object-cover"
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-dark/70" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
