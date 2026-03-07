@@ -76,7 +76,7 @@ export default function FeaturedSections() {
               transition={{ duration: 0.5, delay: i * 0.15 }}
               className="group relative"
             >
-              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
               <div className="relative rounded-2xl border border-black/[0.06] p-8 lg:p-10 hover:border-black/[0.1] transition-all duration-300 h-full flex flex-col">
                 {/* Icon */}
                 <div className={`w-12 h-12 ${feature.iconBg} rounded-xl flex items-center justify-center mb-6`}>

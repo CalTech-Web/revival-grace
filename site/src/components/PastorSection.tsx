@@ -23,8 +23,8 @@ export default function PastorSection() {
             className="lg:col-span-5"
           >
             <div className="relative max-w-md mx-auto lg:mx-0">
-              {/* Decorative frame */}
-              <div className="absolute -top-4 -left-4 w-full h-full rounded-2xl border-2 border-secondary-light/15" />
+              {/* Decorative frame - hidden on mobile to prevent overflow */}
+              <div className="hidden lg:block absolute -top-4 -left-4 w-full h-full rounded-2xl border-2 border-secondary-light/15" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/pastor-ewang-2.webp"

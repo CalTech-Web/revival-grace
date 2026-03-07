@@ -87,13 +87,8 @@ export default function VerseOfTheDay() {
             Verse of the Day
           </h2>
 
-          {/* Large decorative quotation mark */}
-          <div className="text-secondary-light/30 text-[120px] leading-none font-serif mb-[-40px]">
-            &ldquo;
-          </div>
-
           <blockquote className="text-2xl sm:text-3xl lg:text-4xl text-dark leading-relaxed mb-8 font-light max-w-3xl mx-auto">
-            {todayVerse.text}
+            &ldquo;{todayVerse.text}&rdquo;
           </blockquote>
 
           {/* Reference with decorative line */}
