@@ -23,9 +23,9 @@ export default function NewsletterSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Mail className="w-8 h-8 text-primary-light mx-auto mb-5" strokeWidth={1.5} />
+          <Mail className="w-8 h-8 text-white/60 mx-auto mb-5" strokeWidth={1.5} />
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
             Stay Connected in Faith
           </h2>
           <p className="text-white/50 mb-8 leading-relaxed">
@@ -33,7 +33,7 @@ export default function NewsletterSection() {
           </p>
 
           {submitted ? (
-            <div className="flex items-center justify-center gap-3 text-accent">
+            <div className="flex items-center justify-center gap-3 text-primary-light">
               <CheckCircle className="w-5 h-5" strokeWidth={1.5} />
               <p className="font-medium">Thank you for subscribing!</p>
             </div>
@@ -45,11 +45,11 @@ export default function NewsletterSection() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary-light/50"
+                className="flex-1 px-4 py-3 rounded-full bg-white/10 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary-light/50"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors"
+                className="px-6 py-3 bg-accent text-white font-medium rounded-full hover:bg-accent-light transition-colors"
               >
                 Subscribe
               </button>

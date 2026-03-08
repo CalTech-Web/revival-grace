@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { Calendar } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 const verses = [
   { text: "My Father who gave them to me is greater than anyone else; no one can snatch them from him.", ref: "John 10:29" },
@@ -45,15 +44,6 @@ function getDayOfYear(date: Date): number {
   return Math.floor(diff / (1000 * 60 * 60 * 24));
 }
 
-function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
 export default function VerseOfTheDay() {
   const [todayVerse, setTodayVerse] = useState(verses[0]);
   const [dateString, setDateString] = useState("");
@@ -62,41 +52,38 @@ export default function VerseOfTheDay() {
     const now = new Date();
     const dayIndex = getDayOfYear(now) % verses.length;
     setTodayVerse(verses[dayIndex]);
-    setDateString(formatDate(now));
+    setDateString(now.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }));
   }, []);
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden">
-      {/* Background image */}
-      <Image
-        src="/images/verse-bg.jpg"
-        alt=""
-        fill
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-dark/75" />
-
-      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="py-16 lg:py-20 bg-warm-gray">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 mb-4">
-            <Calendar className="w-4 h-4 text-white/60" strokeWidth={1.5} />
-            <p className="text-sm text-white/60">{dateString}</p>
-          </div>
+          <BookOpen className="w-8 h-8 text-primary mx-auto mb-4" strokeWidth={1.5} />
 
-          <h2 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-8">
+          <p className="text-xs font-bold text-accent uppercase tracking-wider mb-2">
+            {dateString}
+          </p>
+
+          <h2 className="font-serif text-sm font-semibold text-text uppercase tracking-wider mb-8">
             Verse of the Day
           </h2>
 
-          <blockquote className="text-2xl sm:text-3xl text-white leading-relaxed mb-6 font-light italic">
+          <blockquote className="font-serif text-2xl sm:text-3xl text-heading leading-relaxed mb-6 italic">
             &ldquo;{todayVerse.text}&rdquo;
           </blockquote>
 
-          <p className="text-primary-light font-semibold text-lg">
+          <p className="text-primary font-bold text-lg">
             {todayVerse.ref}
           </p>
         </motion.div>

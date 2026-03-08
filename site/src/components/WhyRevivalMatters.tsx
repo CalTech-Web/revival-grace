@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 import { Heart, Users, BookOpen, Flame } from "lucide-react";
 
 const points = [
-  { icon: Heart, text: "Hearts set ablaze by the Spirit" },
-  { icon: Users, text: "Families healed, lives restored" },
-  { icon: BookOpen, text: "Reclaiming purity, restoring prayer" },
-  { icon: Flame, text: "Boldness returns to believers" },
+  { icon: Heart, title: "Hearts Set Ablaze", desc: "The Spirit ignites passion for God's Word in every believer who seeks revival." },
+  { icon: Users, title: "Lives Restored", desc: "Families healed and communities transformed through the power of faith." },
+  { icon: BookOpen, title: "Purity & Prayer", desc: "Reclaiming holiness and restoring a vibrant prayer life in the church." },
+  { icon: Flame, title: "Boldness Returns", desc: "Believers empowered to live and share their faith with courage and conviction." },
 ];
 
 export default function WhyRevivalMatters() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-14">
           <motion.div
@@ -22,10 +22,10 @@ export default function WhyRevivalMatters() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
+            <p className="text-xs font-bold text-accent uppercase tracking-wider mb-3">
               Why Revival Matters
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-dark mb-6">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-heading mb-6">
               The Time to Awaken Is Now
             </h2>
             <p className="text-text leading-relaxed">
@@ -34,18 +34,19 @@ export default function WhyRevivalMatters() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
           {points.map((point, i) => (
             <motion.div
-              key={point.text}
+              key={point.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="text-center p-6 rounded-xl bg-warm-gray"
+              className="text-center p-8 rounded-xl bg-cream"
             >
-              <point.icon className="w-7 h-7 text-primary mx-auto mb-3" strokeWidth={1.5} />
-              <p className="text-dark font-medium text-sm">{point.text}</p>
+              <point.icon className="w-8 h-8 text-primary mx-auto mb-4" strokeWidth={1.5} />
+              <h3 className="font-serif font-bold text-heading mb-2">{point.title}</h3>
+              <p className="text-text text-sm leading-relaxed">{point.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -62,7 +63,7 @@ export default function WhyRevivalMatters() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors"
+            className="inline-block px-8 py-3 bg-primary text-white font-medium rounded-full hover:bg-primary-light transition-colors"
           >
             Contact Us
           </Link>

@@ -20,27 +20,27 @@ const categoryColors: Record<string, { bg: string; icon: string }> = {
   "bible-guide-to-financial-breakthrough": { bg: "from-green-500/20 to-green-600/10", icon: "text-green-600" },
   "christian-living": { bg: "from-pink-500/20 to-pink-600/10", icon: "text-pink-600" },
   "christian-ministry": { bg: "from-blue-500/20 to-blue-600/10", icon: "text-blue-600" },
-  "faith-and-holy-spirit": { bg: "from-secondary/20 to-secondary/10", icon: "text-secondary" },
+  "faith-and-holy-spirit": { bg: "from-amber-500/20 to-amber-600/10", icon: "text-amber-600" },
   "free-from-demonic-oppressions": { bg: "from-red-500/20 to-red-600/10", icon: "text-red-600" },
-  "ultimate-guide-to-holiness": { bg: "from-primary/20 to-primary-light/10", icon: "text-primary" },
+  "ultimate-guide-to-holiness": { bg: "from-teal-500/20 to-teal-600/10", icon: "text-teal-600" },
   "understanding-prayer-and-fasting": { bg: "from-indigo-500/20 to-indigo-600/10", icon: "text-indigo-600" },
 };
 
 export default function DevotionalsPage() {
   return (
     <>
-      <section className="py-20 bg-gradient-to-br from-dark via-dark-light to-primary-dark">
+      <section className="py-20 bg-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <BookOpen className="w-12 h-12 text-primary-light mx-auto mb-6" strokeWidth={1.5} />
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <BookOpen className="w-12 h-12 text-white/70 mx-auto mb-6" strokeWidth={1.5} />
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-6">
               Devotionals
             </h1>
-            <p className="text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
               Spirit-filled devotionals handpicked to strengthen your faith and awaken your purpose. Explore our categories below.
             </p>
           </motion.div>
@@ -50,7 +50,7 @@ export default function DevotionalsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+            <h2 className="text-xs font-bold text-accent uppercase tracking-wider mb-3">
               Join Our Community of Faith-Filled Readers
             </h2>
             <p className="text-text max-w-2xl mx-auto">
@@ -76,7 +76,7 @@ export default function DevotionalsPage() {
                   <div className={`rounded-2xl p-8 bg-gradient-to-br ${colors.bg} border border-black/10`}>
                     <div className="flex items-center gap-4 mb-4">
                       <Icon className={`w-8 h-8 ${colors.icon}`} strokeWidth={1.5} />
-                      <h3 className="text-2xl font-bold text-dark">{cat.name}</h3>
+                      <h3 className="font-serif text-2xl font-bold text-heading">{cat.name}</h3>
                     </div>
                     <p className="text-text text-sm leading-relaxed mb-6 max-w-3xl">
                       {cat.description}
@@ -90,7 +90,7 @@ export default function DevotionalsPage() {
                           className="flex items-center gap-3 p-4 bg-white/70 rounded-xl hover:bg-white hover:shadow-sm transition-all group"
                         >
                           <ChevronRight className={`w-4 h-4 ${colors.icon} shrink-0 group-hover:translate-x-0.5 transition-transform`} strokeWidth={1.5} />
-                          <span className="text-sm font-medium text-dark group-hover:text-primary transition-colors">
+                          <span className="text-sm font-medium text-heading group-hover:text-primary transition-colors">
                             {post.title}
                           </span>
                         </Link>
@@ -112,8 +112,8 @@ export default function DevotionalsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Flame className="w-12 h-12 text-secondary mx-auto mb-6" strokeWidth={1.5} />
-            <h2 className="text-3xl font-bold text-dark mb-4">
+            <Flame className="w-12 h-12 text-accent mx-auto mb-6" strokeWidth={1.5} />
+            <h2 className="font-serif text-3xl font-bold text-heading mb-4">
               The Flame of Revival eBook
             </h2>
             <p className="text-lg text-text mb-4">
@@ -124,7 +124,7 @@ export default function DevotionalsPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors"
+              className="inline-block px-8 py-3 bg-primary text-white font-medium rounded-full hover:bg-primary-light transition-colors"
             >
               Download FREE eBook
             </Link>

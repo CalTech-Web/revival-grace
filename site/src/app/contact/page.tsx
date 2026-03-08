@@ -38,18 +38,18 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="py-20 bg-gradient-to-br from-dark via-dark-light to-primary-dark">
+      <section className="py-20 bg-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Mail className="w-12 h-12 text-primary-light mx-auto mb-6" strokeWidth={1.5} />
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <Mail className="w-12 h-12 text-white/70 mx-auto mb-6" strokeWidth={1.5} />
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-6">
               Contact Us
             </h1>
-            <p className="text-xl text-white/70 leading-relaxed">
+            <p className="text-xl text-white/80 leading-relaxed">
               We&apos;d love to hear from you. Reach out with questions, prayer requests, or just to say hello.
             </p>
           </motion.div>
@@ -67,7 +67,7 @@ export default function ContactPage() {
             {status === "sent" ? (
               <div className="text-center py-12">
                 <CheckCircle className="w-16 h-16 text-primary mx-auto mb-6" strokeWidth={1.5} />
-                <h2 className="text-2xl font-bold text-dark mb-4">Message Sent!</h2>
+                <h2 className="font-serif text-2xl font-bold text-heading mb-4">Message Sent!</h2>
                 <p className="text-text">
                   Thank you for reaching out. We will get back to you as soon as possible. God bless you!
                 </p>
@@ -75,7 +75,7 @@ export default function ContactPage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-dark mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-heading mb-2">
                     Your Name
                   </label>
                   <input
@@ -90,7 +90,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-dark mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-heading mb-2">
                     Email Address
                   </label>
                   <input
@@ -105,7 +105,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-dark mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-heading mb-2">
                     Message
                   </label>
                   <textarea
@@ -128,7 +128,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors disabled:opacity-50"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition-colors disabled:opacity-50"
                 >
                   <Send className="w-4 h-4" strokeWidth={1.5} />
                   {status === "sending" ? "Sending..." : "Send Message"}

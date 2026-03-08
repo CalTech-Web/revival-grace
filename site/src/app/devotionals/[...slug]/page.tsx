@@ -41,7 +41,7 @@ export default async function DevotionalPage({ params }: Props) {
 
   return (
     <>
-      <section className="relative py-20 bg-gradient-to-br from-dark via-dark-light to-primary-dark overflow-hidden">
+      <section className="relative py-20 bg-primary overflow-hidden">
         {devotional.image && (
           <>
             <Image
@@ -51,7 +51,7 @@ export default async function DevotionalPage({ params }: Props) {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-dark/75" />
+            <div className="absolute inset-0 bg-primary/80" />
           </>
         )}
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +66,7 @@ export default async function DevotionalPage({ params }: Props) {
             <BookOpen className="w-5 h-5 text-white/60" strokeWidth={1.5} />
             <span className="text-sm text-white/60">{category?.name}</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
             {devotional.title}
           </h1>
         </div>
@@ -74,11 +74,11 @@ export default async function DevotionalPage({ params }: Props) {
 
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 pb-8 border-b border-black/10 text-sm text-black/50 space-y-3">
-            <p className="font-medium text-black/60">By Mfortaw, Ewang Nelson</p>
+          <div className="mb-10 pb-8 border-b border-black/10 text-sm text-text/70 space-y-3">
+            <p className="font-medium text-heading">By Mfortaw, Ewang Nelson</p>
             <p>Copyright &copy; 2014 by Mfortaw, Ewang Nelson.</p>
             <div>
-              <p className="font-medium text-black/60 mb-1">SCRIPTURE QUOTATIONS MARKED</p>
+              <p className="font-medium text-heading mb-1">SCRIPTURE QUOTATIONS MARKED</p>
               <p>
                 Scripture quotations marked (NIV) are taken from the Holy Bible, New International Version&reg;, NIV&reg;. Copyright &copy; 1973, 1978, 1984 by International Bible Society. Used by Permission of Zondervan. All rights reserved worldwide, www.zondervan.com.
               </p>
@@ -88,7 +88,7 @@ export default async function DevotionalPage({ params }: Props) {
             </div>
             <p>
               These devotionals are designed for Christians. If you still need to become a Christian, we encourage you to download our free e-book,{" "}
-              <Link href="/contact" className="text-primary hover:text-primary-dark underline transition-colors">
+              <Link href="/contact" className="text-primary hover:text-primary-light underline transition-colors">
                 The Flame of Revival
               </Link>.
             </p>
@@ -104,11 +104,11 @@ export default async function DevotionalPage({ params }: Props) {
 
           {categoryDevotionals.length > 1 && (
             <div className="mt-16 pt-8 border-t border-black/10">
-              <h3 className="text-lg font-semibold text-dark mb-4">
+              <h3 className="font-serif text-lg font-semibold text-heading mb-4">
                 More from {category?.name}
               </h3>
               <div className="space-y-3">
-                {categoryDevotionals.map((d, i) => (
+                {categoryDevotionals.map((d) => (
                   <Link
                     key={d.slug}
                     href={`/devotionals/${d.slug}`}
@@ -119,7 +119,7 @@ export default async function DevotionalPage({ params }: Props) {
                     }`}
                   >
                     <span className={`text-sm font-medium ${
-                      d.slug === devotional.slug ? "text-primary" : "text-dark"
+                      d.slug === devotional.slug ? "text-primary" : "text-heading"
                     }`}>
                       {d.title}
                     </span>
@@ -133,7 +133,7 @@ export default async function DevotionalPage({ params }: Props) {
             {currentIndex > 0 ? (
               <Link
                 href={`/devotionals/${categoryDevotionals[currentIndex - 1].slug}`}
-                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-dark transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-light transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
                 Previous
@@ -144,7 +144,7 @@ export default async function DevotionalPage({ params }: Props) {
             {currentIndex < categoryDevotionals.length - 1 && (
               <Link
                 href={`/devotionals/${categoryDevotionals[currentIndex + 1].slug}`}
-                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-dark transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-light transition-colors"
               >
                 Next
                 <ArrowLeft className="w-4 h-4 rotate-180" strokeWidth={1.5} />
