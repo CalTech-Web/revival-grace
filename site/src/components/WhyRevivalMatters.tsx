@@ -1,73 +1,68 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Heart, Users, BookOpen, Flame } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { devotionals } from "@/data/devotionals";
 
-const points = [
-  { icon: Heart, title: "Hearts Set Ablaze", desc: "The Spirit ignites passion for God's Word in every believer who seeks revival." },
-  { icon: Users, title: "Lives Restored", desc: "Families healed and communities transformed through the power of faith." },
-  { icon: BookOpen, title: "Purity & Prayer", desc: "Reclaiming holiness and restoring a vibrant prayer life in the church." },
-  { icon: Flame, title: "Boldness Returns", desc: "Believers empowered to live and share their faith with courage and conviction." },
-];
+const badgeColors: Record<string, string> = {
+  "christian-living": "bg-red-600",
+  "faith-and-holy-spirit": "bg-primary",
+  "understanding-prayer-and-fasting": "bg-indigo-600",
+  "ultimate-guide-to-holiness": "bg-teal-600",
+  "bible-guide-to-financial-breakthrough": "bg-green-700",
+  "christian-ministry": "bg-blue-700",
+  "free-from-demonic-oppressions": "bg-rose-700",
+};
 
 export default function WhyRevivalMatters() {
+  const picks = devotionals.slice(3, 6);
+
   return (
-    <section className="py-16 lg:py-20 bg-white">
+    <section className="py-14 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-14">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+        <div className="flex items-baseline justify-between mb-8">
+          <h2 className="font-serif text-[26px] font-bold text-heading">
+            Editor&apos;s Picks
+          </h2>
+          <Link
+            href="/devotionals"
+            className="hidden sm:inline-flex items-center gap-1 text-[13px] font-medium text-heading hover:text-accent transition-colors"
           >
-            <p className="text-xs font-bold text-accent uppercase tracking-wider mb-3">
-              Why Revival Matters
-            </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-heading mb-6">
-              The Time to Awaken Is Now
-            </h2>
-            <p className="text-text leading-relaxed">
-              We live in a time where many hearts have grown weary, and faith often feels watered down. Revival Grace Ministry exists to call the Church back to its foundation, Jesus Christ. True revival begins not in crowds, but in hearts set ablaze by the Spirit.
-            </p>
-          </motion.div>
+            Explore More
+            <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
-          {points.map((point, i) => (
-            <motion.div
-              key={point.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="text-center p-8 rounded-xl bg-cream"
-            >
-              <point.icon className="w-8 h-8 text-primary mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="font-serif font-bold text-heading mb-2">{point.title}</h3>
-              <p className="text-text text-sm leading-relaxed">{point.desc}</p>
-            </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {picks.map((post) => (
+            <Link key={post.slug} href={`/devotionals/${post.slug}`} className="group block">
+              <div className="rounded-lg overflow-hidden">
+                <div className="relative h-[200px] overflow-hidden">
+                  {post.image && (
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  )}
+                </div>
+                <div className="pt-4">
+                  <span className={`inline-block px-2.5 py-1 text-white text-[9px] font-bold uppercase tracking-widest rounded-sm mb-2.5 ${badgeColors[post.categorySlug] || "bg-primary"}`}>
+                    {post.categoryName}
+                  </span>
+                  <h3 className="font-serif font-bold text-heading text-[17px] leading-snug mb-1.5 group-hover:text-primary transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-[13px] text-text leading-relaxed line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <p className="text-text leading-relaxed mb-8">
-            Our ministry believes revival is urgent and personal. We don&apos;t wait for a building to be full, we ask for hearts to be filled. Through weekly devotionals, a growing community of believers, and a message centered on hope and holiness, we&apos;re helping Christians everywhere reconnect with their first love. Will you answer the call?
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-3 bg-primary text-white font-medium rounded-full hover:bg-primary-light transition-colors"
-          >
-            Contact Us
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

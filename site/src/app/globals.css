@@ -4,14 +4,14 @@
   --color-primary: #1B5E5E;
   --color-primary-dark: #14474A;
   --color-primary-light: #2A7A7A;
-  --color-accent: #D4734A;
-  --color-accent-light: #E08A65;
-  --color-dark: #1C2333;
-  --color-dark-light: #2A3344;
+  --color-accent: #C75B2A;
+  --color-accent-light: #D97040;
+  --color-dark: #1A1F2B;
+  --color-dark-light: #262C3A;
   --color-cream: #F5F2ED;
-  --color-warm-gray: #EBE8E3;
+  --color-warm-gray: #EDEAE5;
   --color-text: #555555;
-  --color-heading: #2D2D2D;
+  --color-heading: #222222;
   --font-sans: var(--font-geist-sans);
   --font-serif: var(--font-playfair);
 }
@@ -19,6 +19,7 @@
 body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   background-color: var(--color-cream);
+  color: var(--color-text);
 }
 
 html {

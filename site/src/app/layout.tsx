@@ -13,7 +13,7 @@ const geistSans = Geist({
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${playfair.variable} antialiased`}>
         <Navbar />
-        <main className="pt-20">{children}</main>
+        <main className="pt-[104px]">{children}</main>
         <Footer />
       </body>
     </html>
