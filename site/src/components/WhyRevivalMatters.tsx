@@ -44,7 +44,7 @@ export default function WhyRevivalMatters() {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="text-center p-6 rounded-xl bg-warm-gray"
             >
-              <point.icon className="w-7 h-7 text-accent mx-auto mb-3" strokeWidth={1.5} />
+              <point.icon className="w-7 h-7 text-primary mx-auto mb-3" strokeWidth={1.5} />
               <p className="text-dark font-medium text-sm">{point.text}</p>
             </motion.div>
           ))}

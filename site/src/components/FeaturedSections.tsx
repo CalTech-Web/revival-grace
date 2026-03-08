@@ -12,7 +12,7 @@ const features = [
       "Pastor Ewang Nelson Mfortaw passionately calls believers to embrace a transformative revival. This book, reflecting the core message of Revival Grace Ministry, invites you to discover the Holy Spirit\u2019s plans for our time and the vital role of learning in this Christian revival.",
     cta: "Download FREE eBook",
     href: "/devotionals",
-    borderColor: "border-t-secondary",
+    borderColor: "border-t-primary",
   },
   {
     icon: BookOpen,
@@ -30,7 +30,7 @@ const features = [
       "At Revival Grace Ministry, we provide resources to strengthen your prayer life and guide you towards holiness. Explore devotionals to cultivate a more intimate relationship with God.",
     cta: "Read More",
     href: "/devotionals",
-    borderColor: "border-t-secondary",
+    borderColor: "border-t-primary",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function FeaturedSections() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <p className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
             What We Offer
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-dark">
@@ -63,14 +63,14 @@ export default function FeaturedSections() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <div className={`bg-white rounded-xl border-t-4 ${feature.borderColor} p-8 h-full flex flex-col shadow-sm`}>
-                <feature.icon className="w-8 h-8 text-secondary mb-5" strokeWidth={1.5} />
+                <feature.icon className="w-8 h-8 text-primary mb-5" strokeWidth={1.5} />
                 <h3 className="text-lg font-bold text-dark mb-3">{feature.title}</h3>
                 <p className="text-text text-sm leading-relaxed mb-6 flex-1">
                   {feature.description}
                 </p>
                 <Link
                   href={feature.href}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-light transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary-dark hover:text-primary transition-colors"
                 >
                   {feature.cta}
                   <ArrowRight className="w-4 h-4" strokeWidth={1.5} />

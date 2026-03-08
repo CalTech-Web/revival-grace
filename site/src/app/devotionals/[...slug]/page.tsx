@@ -88,7 +88,7 @@ export default async function DevotionalPage({ params }: Props) {
             </div>
             <p>
               These devotionals are designed for Christians. If you still need to become a Christian, we encourage you to download our free e-book,{" "}
-              <Link href="/contact" className="text-accent hover:text-accent-light underline transition-colors">
+              <Link href="/contact" className="text-primary hover:text-primary-dark underline transition-colors">
                 The Flame of Revival
               </Link>.
             </p>
@@ -114,12 +114,12 @@ export default async function DevotionalPage({ params }: Props) {
                     href={`/devotionals/${d.slug}`}
                     className={`block p-4 rounded-lg transition-colors ${
                       d.slug === devotional.slug
-                        ? "bg-accent/10 border border-accent/20"
+                        ? "bg-primary/10 border border-primary/20"
                         : "bg-black/5 hover:bg-black/10"
                     }`}
                   >
                     <span className={`text-sm font-medium ${
-                      d.slug === devotional.slug ? "text-secondary" : "text-dark"
+                      d.slug === devotional.slug ? "text-primary" : "text-dark"
                     }`}>
                       {d.title}
                     </span>
@@ -133,7 +133,7 @@ export default async function DevotionalPage({ params }: Props) {
             {currentIndex > 0 ? (
               <Link
                 href={`/devotionals/${categoryDevotionals[currentIndex - 1].slug}`}
-                className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-light transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-dark transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
                 Previous
@@ -144,7 +144,7 @@ export default async function DevotionalPage({ params }: Props) {
             {currentIndex < categoryDevotionals.length - 1 && (
               <Link
                 href={`/devotionals/${categoryDevotionals[currentIndex + 1].slug}`}
-                className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-light transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-dark transition-colors"
               >
                 Next
                 <ArrowLeft className="w-4 h-4 rotate-180" strokeWidth={1.5} />

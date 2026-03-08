@@ -96,7 +96,7 @@ export default function VerseOfTheDay() {
             &ldquo;{todayVerse.text}&rdquo;
           </blockquote>
 
-          <p className="text-accent-light font-semibold text-lg">
+          <p className="text-primary-light font-semibold text-lg">
             {todayVerse.ref}
           </p>
         </motion.div>

@@ -23,7 +23,7 @@ export default function DevotionalOfWeek() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <p className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
             Devotional of the Week
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-dark mb-3">
@@ -74,7 +74,7 @@ export default function DevotionalOfWeek() {
 
                 <Link
                   href={`/devotionals/${latest.slug}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors w-fit group"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors w-fit group"
                 >
                   Read Devotional
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" strokeWidth={1.5} />
@@ -92,7 +92,7 @@ export default function DevotionalOfWeek() {
                   <div>
                     <p className="font-bold text-dark text-sm">The Flame of Revival</p>
                     <p className="text-text text-xs mb-1">Free eBook by Pastor Ewang Nelson</p>
-                    <Link href="/contact" className="text-xs font-semibold text-accent hover:text-accent-light transition-colors">
+                    <Link href="/contact" className="text-xs font-semibold text-primary-dark hover:text-primary transition-colors">
                       Download Free &rarr;
                     </Link>
                   </div>

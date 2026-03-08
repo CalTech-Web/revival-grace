@@ -36,7 +36,7 @@ export default function DevotionalsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <BookOpen className="w-12 h-12 text-secondary-light mx-auto mb-6" strokeWidth={1.5} />
+            <BookOpen className="w-12 h-12 text-primary-light mx-auto mb-6" strokeWidth={1.5} />
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Devotionals
             </h1>
@@ -50,7 +50,7 @@ export default function DevotionalsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
               Join Our Community of Faith-Filled Readers
             </h2>
             <p className="text-text max-w-2xl mx-auto">
@@ -90,7 +90,7 @@ export default function DevotionalsPage() {
                           className="flex items-center gap-3 p-4 bg-white/70 rounded-xl hover:bg-white hover:shadow-sm transition-all group"
                         >
                           <ChevronRight className={`w-4 h-4 ${colors.icon} shrink-0 group-hover:translate-x-0.5 transition-transform`} strokeWidth={1.5} />
-                          <span className="text-sm font-medium text-dark group-hover:text-secondary transition-colors">
+                          <span className="text-sm font-medium text-dark group-hover:text-primary transition-colors">
                             {post.title}
                           </span>
                         </Link>

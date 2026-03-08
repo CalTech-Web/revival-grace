@@ -54,7 +54,7 @@ export default function PastorSection() {
             </div>
 
             {/* Quote */}
-            <div className="bg-cream rounded-xl p-6 mb-8 border-l-4 border-accent">
+            <div className="bg-cream rounded-xl p-6 mb-8 border-l-4 border-primary">
               <p className="text-dark italic leading-relaxed">
                 &ldquo;I believe the Holy Spirit is beginning to reveal the remarkable plans He has been nurturing secretly for many years. I invite you to join me on this journey of faith and discovery!&rdquo;
               </p>

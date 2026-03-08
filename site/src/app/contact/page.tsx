@@ -45,7 +45,7 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Mail className="w-12 h-12 text-secondary-light mx-auto mb-6" strokeWidth={1.5} />
+            <Mail className="w-12 h-12 text-primary-light mx-auto mb-6" strokeWidth={1.5} />
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Contact Us
             </h1>
@@ -66,7 +66,7 @@ export default function ContactPage() {
           >
             {status === "sent" ? (
               <div className="text-center py-12">
-                <CheckCircle className="w-16 h-16 text-accent mx-auto mb-6" strokeWidth={1.5} />
+                <CheckCircle className="w-16 h-16 text-primary mx-auto mb-6" strokeWidth={1.5} />
                 <h2 className="text-2xl font-bold text-dark mb-4">Message Sent!</h2>
                 <p className="text-text">
                   Thank you for reaching out. We will get back to you as soon as possible. God bless you!
@@ -84,7 +84,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-black/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border border-black/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="John Doe"
                   />
                 </div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-black/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border border-black/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                     rows={6}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-black/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-black/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                     placeholder="Your message, prayer request, or question..."
                   />
                 </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors disabled:opacity-50"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors disabled:opacity-50"
                 >
                   <Send className="w-4 h-4" strokeWidth={1.5} />
                   {status === "sending" ? "Sending..." : "Send Message"}

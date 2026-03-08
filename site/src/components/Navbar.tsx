@@ -17,7 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <Link href="/" className="flex items-center group">
@@ -36,14 +36,14 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-white/70 hover:text-secondary-light transition-colors"
+                className="text-sm text-white/70 hover:text-primary-light transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="ml-2 px-4 py-2 bg-accent text-white text-sm font-medium rounded-lg hover:bg-accent-light transition-colors"
+              className="ml-2 px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-light transition-colors"
             >
               Get In Touch
             </Link>
@@ -60,14 +60,14 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-black border-t border-white/10">
+        <div className="md:hidden bg-dark border-t border-white/10">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block text-white/70 hover:text-secondary-light transition-colors"
+                className="block text-white/70 hover:text-primary-light transition-colors"
               >
                 {link.label}
               </Link>
@@ -75,7 +75,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="block mt-3 px-4 py-2 bg-accent text-white text-center text-sm font-medium rounded-lg hover:bg-accent-light transition-colors"
+              className="block mt-3 px-4 py-2 bg-primary text-white text-center text-sm font-medium rounded-lg hover:bg-primary-light transition-colors"
             >
               Get In Touch
             </Link>

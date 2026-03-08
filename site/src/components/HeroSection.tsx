@@ -15,7 +15,7 @@ export default function HeroSection() {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-black/15" />
+      <div className="absolute inset-0 bg-dark/30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
         <div className="max-w-3xl">
@@ -40,7 +40,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/about"
-                className="px-8 py-3.5 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors"
+                className="px-8 py-3.5 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors"
               >
                 Learn More
               </Link>

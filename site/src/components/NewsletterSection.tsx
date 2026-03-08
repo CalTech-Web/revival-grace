@@ -23,7 +23,7 @@ export default function NewsletterSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Mail className="w-8 h-8 text-white/70 mx-auto mb-5" strokeWidth={1.5} />
+          <Mail className="w-8 h-8 text-primary-light mx-auto mb-5" strokeWidth={1.5} />
 
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Stay Connected in Faith
@@ -45,7 +45,7 @@ export default function NewsletterSection() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-secondary-light/50"
+                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary-light/50"
               />
               <button
                 type="submit"

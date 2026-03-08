@@ -94,7 +94,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="text-center p-8 bg-white rounded-2xl shadow-sm"
               >
-                <item.icon className="w-10 h-10 text-accent mx-auto mb-4" strokeWidth={1.5} />
+                <item.icon className="w-10 h-10 text-primary mx-auto mb-4" strokeWidth={1.5} />
                 <h3 className="text-lg font-bold text-dark mb-2">{item.title}</h3>
                 <p className="text-text text-sm">{item.desc}</p>
               </motion.div>
