@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section className="relative min-h-[85vh] flex items-center overflow-hidden">
       {/* Background image */}
       <Image
-        src="https://images.pexels.com/photos/6044235/pexels-photo-6044235.jpeg"
+        src="https://images.pexels.com/photos/6274049/pexels-photo-6274049.jpeg"
         alt=""
         fill
         className="object-cover"
