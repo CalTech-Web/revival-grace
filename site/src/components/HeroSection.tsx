@@ -15,7 +15,7 @@ export default function HeroSection() {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-dark/70" />
+      <div className="absolute inset-0 bg-black/15" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
         <div className="max-w-3xl">
