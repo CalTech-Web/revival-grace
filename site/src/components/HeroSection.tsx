@@ -4,7 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Flame } from "lucide-react";
-import { devotionals } from "@/data/devotionals";
+import { devotionals, getDevotionalBySlug } from "@/data/devotionals";
+
+// Change this slug to update the devotional of the week
+const FEATURED_SLUG = "how-to-find-happiness-secrets-no-one-told-you";
 
 const verses = [
   { text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.", ref: "Jeremiah 29:11" },
@@ -25,7 +28,7 @@ function getDayOfYear(date: Date): number {
 export default function HeroSection() {
   const [verse, setVerse] = useState(verses[0]);
   const [dateStr, setDateStr] = useState("");
-  const latest = devotionals[devotionals.length - 1];
+  const latest = getDevotionalBySlug(FEATURED_SLUG.split("/")) || devotionals[devotionals.length - 1];
   const second = devotionals[devotionals.length - 2];
 
   useEffect(() => {
@@ -83,7 +86,7 @@ export default function HeroSection() {
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="text-[10px] font-bold uppercase tracking-widest mb-2 text-white/60">
-                  Today&apos;s Devotion
+                  Devotional of the Week
                 </p>
                 <h2 className="font-serif text-white text-2xl sm:text-[28px] font-bold leading-tight mb-2">
                   {latest.title}

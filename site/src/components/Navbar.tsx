@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Search, Menu, X } from "lucide-react";
 
 const leftLinks = [
-  { href: "/devotionals", label: "Read" },
+  { href: "/devotionals", label: "Devotionals" },
   { href: "/devotionals#prayer-fasting", label: "Topics" },
 ];
 

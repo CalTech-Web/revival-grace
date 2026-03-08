@@ -13,13 +13,13 @@ export default function FeaturedSections() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-baseline justify-between mb-8">
           <h2 className="font-serif text-[26px] font-bold text-heading">
-            Featured Articles
+            Devotionals
           </h2>
           <Link
             href="/devotionals"
             className="hidden sm:inline-flex items-center gap-1 text-[13px] font-medium text-heading hover:text-accent transition-colors"
           >
-            Explore More Articles
+            Explore More Devotionals
             <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
           </Link>
         </div>
@@ -40,7 +40,7 @@ export default function FeaturedSections() {
                 </div>
                 <div className="pt-4">
                   <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">
-                    Feature Article
+                    Devotional
                   </p>
                   <h3 className="font-serif font-bold text-heading text-[15px] leading-snug mb-1.5 group-hover:text-primary transition-colors">
                     {post.title}
@@ -58,7 +58,7 @@ export default function FeaturedSections() {
           href="/devotionals"
           className="sm:hidden flex items-center justify-center gap-1 mt-8 text-[13px] font-medium text-heading hover:text-accent transition-colors"
         >
-          Explore More Articles
+          Explore More Devotionals
           <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
         </Link>
       </div>
