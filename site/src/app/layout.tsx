@@ -3,6 +3,8 @@ import { Geist } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SubscriptionPopup from "@/components/SubscriptionPopup";
+import { SubscriptionProvider } from "@/contexts/SubscriptionContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -42,9 +44,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${playfair.variable} antialiased`}>
-        <Navbar />
-        <main className="pt-[104px]">{children}</main>
-        <Footer />
+        <SubscriptionProvider>
+          <Navbar />
+          <main className="pt-[104px]">{children}</main>
+          <Footer />
+          <SubscriptionPopup />
+        </SubscriptionProvider>
       </body>
     </html>
   );

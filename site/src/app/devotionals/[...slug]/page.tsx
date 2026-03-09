@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, BookOpen } from "lucide-react";
 import { devotionals, getDevotionalBySlug, getDevotionalsByCategory, getCategoryBySlug } from "@/data/devotionals";
+import DevotionalContent from "@/components/DevotionalContent";
 import type { Metadata } from "next";
 
 interface Props {
@@ -74,83 +75,85 @@ export default async function DevotionalPage({ params }: Props) {
 
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 pb-8 border-b border-black/10 text-sm text-text/70 space-y-3">
-            <p className="font-medium text-heading">By Mfortaw, Ewang Nelson</p>
-            <p>Copyright &copy; 2014 by Mfortaw, Ewang Nelson.</p>
-            <div>
-              <p className="font-medium text-heading mb-1">SCRIPTURE QUOTATIONS MARKED</p>
-              <p>
-                Scripture quotations marked (NIV) are taken from the Holy Bible, New International Version&reg;, NIV&reg;. Copyright &copy; 1973, 1978, 1984 by International Bible Society. Used by Permission of Zondervan. All rights reserved worldwide, www.zondervan.com.
-              </p>
-              <p className="mt-2">
-                Unless otherwise indicated, all other quotations from scripture have been taken from the Holy Bible, Authorized King James Version&reg;.
-              </p>
-            </div>
-            <p>
-              These devotionals are designed for Christians. If you still need to become a Christian, we encourage you to download our free e-book,{" "}
-              <Link href="/contact" className="text-primary hover:text-primary-light underline transition-colors">
-                The Flame of Revival
-              </Link>.
-            </p>
-          </div>
-
-          <article className="prose prose-lg max-w-none">
-            {paragraphs.map((paragraph, i) => (
-              <p key={i} className="text-text leading-relaxed mb-6">
-                {paragraph}
-              </p>
-            ))}
-          </article>
-
-          {categoryDevotionals.length > 1 && (
-            <div className="mt-16 pt-8 border-t border-black/10">
-              <h3 className="font-serif text-lg font-semibold text-heading mb-4">
-                More from {category?.name}
-              </h3>
-              <div className="space-y-3">
-                {categoryDevotionals.map((d) => (
-                  <Link
-                    key={d.slug}
-                    href={`/devotionals/${d.slug}`}
-                    className={`block p-4 rounded-lg transition-colors ${
-                      d.slug === devotional.slug
-                        ? "bg-primary/10 border border-primary/20"
-                        : "bg-black/5 hover:bg-black/10"
-                    }`}
-                  >
-                    <span className={`text-sm font-medium ${
-                      d.slug === devotional.slug ? "text-primary" : "text-heading"
-                    }`}>
-                      {d.title}
-                    </span>
-                  </Link>
-                ))}
+          <DevotionalContent preview={paragraphs[0]}>
+            <div className="mb-10 pb-8 border-b border-black/10 text-sm text-text/70 space-y-3">
+              <p className="font-medium text-heading">By Mfortaw, Ewang Nelson</p>
+              <p>Copyright &copy; 2014 by Mfortaw, Ewang Nelson.</p>
+              <div>
+                <p className="font-medium text-heading mb-1">SCRIPTURE QUOTATIONS MARKED</p>
+                <p>
+                  Scripture quotations marked (NIV) are taken from the Holy Bible, New International Version&reg;, NIV&reg;. Copyright &copy; 1973, 1978, 1984 by International Bible Society. Used by Permission of Zondervan. All rights reserved worldwide, www.zondervan.com.
+                </p>
+                <p className="mt-2">
+                  Unless otherwise indicated, all other quotations from scripture have been taken from the Holy Bible, Authorized King James Version&reg;.
+                </p>
               </div>
+              <p>
+                These devotionals are designed for Christians. If you still need to become a Christian, we encourage you to download our free e-book,{" "}
+                <Link href="/contact" className="text-primary hover:text-primary-light underline transition-colors">
+                  The Flame of Revival
+                </Link>.
+              </p>
             </div>
-          )}
 
-          <div className="mt-12 flex justify-between">
-            {currentIndex > 0 ? (
-              <Link
-                href={`/devotionals/${categoryDevotionals[currentIndex - 1].slug}`}
-                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-light transition-colors"
-              >
-                <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
-                Previous
-              </Link>
-            ) : (
-              <div />
+            <article className="prose prose-lg max-w-none">
+              {paragraphs.map((paragraph, i) => (
+                <p key={i} className="text-text leading-relaxed mb-6">
+                  {paragraph}
+                </p>
+              ))}
+            </article>
+
+            {categoryDevotionals.length > 1 && (
+              <div className="mt-16 pt-8 border-t border-black/10">
+                <h3 className="font-serif text-lg font-semibold text-heading mb-4">
+                  More from {category?.name}
+                </h3>
+                <div className="space-y-3">
+                  {categoryDevotionals.map((d) => (
+                    <Link
+                      key={d.slug}
+                      href={`/devotionals/${d.slug}`}
+                      className={`block p-4 rounded-lg transition-colors ${
+                        d.slug === devotional.slug
+                          ? "bg-primary/10 border border-primary/20"
+                          : "bg-black/5 hover:bg-black/10"
+                      }`}
+                    >
+                      <span className={`text-sm font-medium ${
+                        d.slug === devotional.slug ? "text-primary" : "text-heading"
+                      }`}>
+                        {d.title}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             )}
-            {currentIndex < categoryDevotionals.length - 1 && (
-              <Link
-                href={`/devotionals/${categoryDevotionals[currentIndex + 1].slug}`}
-                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-light transition-colors"
-              >
-                Next
-                <ArrowLeft className="w-4 h-4 rotate-180" strokeWidth={1.5} />
-              </Link>
-            )}
-          </div>
+
+            <div className="mt-12 flex justify-between">
+              {currentIndex > 0 ? (
+                <Link
+                  href={`/devotionals/${categoryDevotionals[currentIndex - 1].slug}`}
+                  className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-light transition-colors"
+                >
+                  <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
+                  Previous
+                </Link>
+              ) : (
+                <div />
+              )}
+              {currentIndex < categoryDevotionals.length - 1 && (
+                <Link
+                  href={`/devotionals/${categoryDevotionals[currentIndex + 1].slug}`}
+                  className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-light transition-colors"
+                >
+                  Next
+                  <ArrowLeft className="w-4 h-4 rotate-180" strokeWidth={1.5} />
+                </Link>
+              )}
+            </div>
+          </DevotionalContent>
         </div>
       </section>
     </>
