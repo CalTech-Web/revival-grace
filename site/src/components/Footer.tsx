@@ -105,15 +105,15 @@ export default function Footer() {
       {/* Copyright */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-[11px] text-white/30">
+          <p className="text-[11px] text-white/50">
             Copyright &copy; 2026 Revival Grace Ministry. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy-policy" className="text-[11px] text-white/30 hover:text-white/60 transition-colors">Privacy Policy</Link>
-            <Link href="/terms-conditions" className="text-[11px] text-white/30 hover:text-white/60 transition-colors">Terms & Conditions</Link>
-            <span className="text-[11px] text-white/30">
-              Powered by{" "}
-              <a href="https://caltechweb.com" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">
+            <Link href="/privacy-policy" className="text-[11px] text-white/50 hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms-conditions" className="text-[11px] text-white/50 hover:text-white transition-colors">Terms & Conditions</Link>
+            <span className="text-[11px] text-white/50">
+              Built by{" "}
+              <a href="https://caltechweb.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">
                 CalTech Web
               </a>
             </span>
