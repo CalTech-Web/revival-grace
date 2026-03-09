@@ -68,13 +68,15 @@ export default function Navbar() {
       <div className="border-b border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center h-14">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image
-              src="/images/favicon.png"
-              alt="Revival Grace Ministry"
-              width={28}
-              height={28}
-              className="rounded-full"
-            />
+            <div className="logo-shine rounded-full">
+              <Image
+                src="/images/favicon.png"
+                alt="Revival Grace Ministry"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
+            </div>
             <span className="font-serif text-xl font-bold text-heading tracking-tight">
               Revival Grace Ministry
             </span>

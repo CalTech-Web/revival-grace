@@ -27,13 +27,15 @@ export default function Footer() {
       {/* Logo bar */}
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-center gap-2.5">
-          <Image
-            src="/images/favicon.png"
-            alt="Revival Grace Ministry"
-            width={28}
-            height={28}
-            className="rounded-full"
-          />
+          <div className="logo-shine rounded-full">
+            <Image
+              src="/images/favicon.png"
+              alt="Revival Grace Ministry"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+          </div>
           <span className="font-serif text-lg font-bold text-white tracking-tight">
             Revival Grace Ministry
           </span>
