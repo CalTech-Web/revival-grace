@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Flame } from "lucide-react";
 import { devotionals, getDevotionalBySlug } from "@/data/devotionals";
+import EbookDownloadButton from "@/components/EbookDownloadButton";
 
 // Change this slug to update the devotional of the week
 const FEATURED_SLUG = "how-to-find-happiness-secrets-no-one-told-you";
@@ -138,7 +139,7 @@ export default function HeroSection() {
             </div>
 
             {/* Featured eBook */}
-            <div className="bg-white rounded-lg p-5 flex-1">
+            <EbookDownloadButton className="bg-white rounded-lg p-5 flex-1 text-left hover:shadow-md transition-shadow cursor-pointer">
               <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-3">
                 Free eBook
               </p>
@@ -153,7 +154,7 @@ export default function HeroSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </EbookDownloadButton>
 
             {/* This week */}
             <Link href={`/devotionals/${second.slug}`} className="bg-white rounded-lg p-5 flex-1 group">

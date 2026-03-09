@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowLeft, BookOpen } from "lucide-react";
 import { devotionals, getDevotionalBySlug, getDevotionalsByCategory, getCategoryBySlug } from "@/data/devotionals";
 import DevotionalContent from "@/components/DevotionalContent";
+import EbookDownloadButton from "@/components/EbookDownloadButton";
 import type { Metadata } from "next";
 
 interface Props {
@@ -90,9 +91,9 @@ export default async function DevotionalPage({ params }: Props) {
               </div>
               <p>
                 These devotionals are designed for Christians. If you still need to become a Christian, we encourage you to download our free e-book,{" "}
-                <Link href="/contact" className="text-primary hover:text-primary-light underline transition-colors">
+                <EbookDownloadButton className="text-primary hover:text-primary-light underline transition-colors cursor-pointer">
                   The Flame of Revival
-                </Link>.
+                </EbookDownloadButton>.
               </p>
             </div>
 

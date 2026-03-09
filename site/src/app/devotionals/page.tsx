@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { BookOpen, DollarSign, Heart, Flame, Shield, Cross, HandHelping, ChevronRight } from "lucide-react";
 import { categories, getDevotionalsByCategory } from "@/data/devotionals";
 import NewsletterSection from "@/components/NewsletterSection";
+import EbookDownloadButton from "@/components/EbookDownloadButton";
 
 const categoryIcons: Record<string, typeof BookOpen> = {
   "bible-guide-to-financial-breakthrough": DollarSign,
@@ -125,12 +126,11 @@ export default function DevotionalsPage() {
             <p className="text-text leading-relaxed mb-8 max-w-2xl mx-auto">
               Discover deep spiritual insights and timeless truths in The Flame of Revival, a free eBook written to awaken your heart and strengthen your walk with God. Pastor Ewang Nelson shares powerful revelations that inspire growth, renewal, and an unshakable faith.
             </p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-3 bg-primary text-white font-medium rounded-full hover:bg-primary-light transition-colors"
+            <EbookDownloadButton
+              className="inline-block px-8 py-3 bg-primary text-white font-medium rounded-full hover:bg-primary-light transition-colors cursor-pointer"
             >
               Download FREE eBook
-            </Link>
+            </EbookDownloadButton>
           </motion.div>
         </div>
       </section>

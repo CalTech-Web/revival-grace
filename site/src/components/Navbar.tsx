@@ -7,7 +7,7 @@ import { Search, Menu, X } from "lucide-react";
 
 const leftLinks = [
   { href: "/devotionals", label: "Devotionals" },
-  { href: "/devotionals#prayer-fasting", label: "Topics" },
+  { href: "/topics", label: "Topics" },
 ];
 
 const rightLinks = [

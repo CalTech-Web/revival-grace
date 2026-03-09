@@ -36,14 +36,13 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="w-full aspect-square bg-cream rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-40 h-40 rounded-full bg-primary/20 mx-auto mb-6 flex items-center justify-center">
-                    <BookOpen className="w-20 h-20 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <p className="font-serif text-heading font-bold text-xl">Pastor Ewang Nelson</p>
-                  <p className="text-text">Founder & Senior Pastor</p>
-                </div>
+              <div className="w-full aspect-square relative rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/pastor-ewang-about.webp"
+                  alt="Pastor Ewang Nelson"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </motion.div>
 
