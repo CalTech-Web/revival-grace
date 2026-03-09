@@ -36,12 +36,12 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="w-full aspect-square relative rounded-2xl overflow-hidden">
+              <div className="w-full aspect-[3/4] relative rounded-2xl overflow-hidden">
                 <Image
                   src="/images/pastor-ewang-about.webp"
                   alt="Pastor Ewang Nelson"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
             </motion.div>
