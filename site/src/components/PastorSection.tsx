@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BookOpen, Heart, Flame, ArrowRight } from "lucide-react";
+import EbookDownloadButton from "@/components/EbookDownloadButton";
 
 const features = [
   {
@@ -72,19 +73,35 @@ export default function PastorSection() {
 
             {/* Three features in a row */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-              {features.map((f) => (
-                <div key={f.title} className="text-center sm:text-left">
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 mb-3">
-                    <f.icon className="w-4.5 h-4.5 text-primary" strokeWidth={1.5} />
+              {features.map((f) => {
+                const content = (
+                  <>
+                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 mb-3">
+                      <f.icon className="w-4.5 h-4.5 text-primary" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-serif font-bold text-heading text-[14px] mb-1">
+                      {f.title}
+                    </h3>
+                    <p className="text-text/70 text-[13px] leading-relaxed">
+                      {f.desc}
+                    </p>
+                  </>
+                );
+
+                if (f.title === "Free eBook") {
+                  return (
+                    <EbookDownloadButton key={f.title} className="text-center sm:text-left cursor-pointer hover:opacity-80 transition-opacity">
+                      {content}
+                    </EbookDownloadButton>
+                  );
+                }
+
+                return (
+                  <div key={f.title} className="text-center sm:text-left">
+                    {content}
                   </div>
-                  <h3 className="font-serif font-bold text-heading text-[14px] mb-1">
-                    {f.title}
-                  </h3>
-                  <p className="text-text/70 text-[13px] leading-relaxed">
-                    {f.desc}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* CTA */}
