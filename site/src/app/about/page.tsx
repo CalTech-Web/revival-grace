@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { BookOpen, Flame, Heart, Users } from "lucide-react";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -7,8 +8,10 @@ import NewsletterSection from "@/components/NewsletterSection";
 export default function AboutPage() {
   return (
     <>
-      <section className="py-20 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 overflow-hidden">
+        <Image src="/images/hero/about-bg.jpg" alt="" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-primary/80" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

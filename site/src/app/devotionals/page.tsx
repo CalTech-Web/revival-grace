@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { BookOpen, DollarSign, Heart, Flame, Shield, Cross, HandHelping, ChevronRight } from "lucide-react";
 import { categories, getDevotionalsByCategory } from "@/data/devotionals";
@@ -29,8 +30,10 @@ const categoryColors: Record<string, { bg: string; icon: string }> = {
 export default function DevotionalsPage() {
   return (
     <>
-      <section className="py-20 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 overflow-hidden">
+        <Image src="/images/hero/devotionals-bg.jpg" alt="" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-primary/80" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

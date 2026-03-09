@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Heart, BookOpen, Users, Globe } from "lucide-react";
 
@@ -13,8 +14,10 @@ const impacts = [
 export default function DonatePage() {
   return (
     <>
-      <section className="py-20 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 overflow-hidden">
+        <Image src="/images/hero/donate-bg.jpg" alt="" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-primary/80" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,9 +71,15 @@ export default function DonatePage() {
             <p className="text-text mb-8 max-w-xl mx-auto">
               Thank you for considering a donation to Revival Grace Ministry. Your support, no matter the size, helps us fulfill our mission of spreading the Word and igniting faith in hearts around the world.
             </p>
-            <p className="text-text/50 text-sm">
-              For donation inquiries, please reach out through our contact page.
-            </p>
+            <a
+              href="https://donate.stripe.com/00w5kv89ffaXcl0g9O9MY00"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-white font-medium rounded-full hover:bg-accent-light transition-colors"
+            >
+              <Heart className="w-5 h-5" strokeWidth={1.5} />
+              Donate Now
+            </a>
           </motion.div>
         </div>
       </section>
