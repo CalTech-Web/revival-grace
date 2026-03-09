@@ -68,12 +68,12 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
           {/* Left - Pastor card */}
           <Link href="/about" className="lg:col-span-3 group">
-            <div className="relative rounded-lg overflow-hidden h-[280px] lg:h-full">
+            <div className="relative rounded-lg overflow-hidden h-[420px] lg:h-full">
               <Image
                 src="/images/pastor-ewang-2.webp"
                 alt="Pastor Ewang Nelson"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
