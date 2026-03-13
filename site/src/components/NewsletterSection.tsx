@@ -6,7 +6,7 @@ import { CheckCircle, Mail, Loader2 } from "lucide-react";
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
-    "idle" | "submitting" | "verification_sent" | "pending_verification" | "already_subscribed" | "error"
+    "idle" | "submitting" | "verification_sent" | "pending_verification" | "already_subscribed" | "forgotten" | "error"
   >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -56,6 +56,18 @@ export default function NewsletterSection() {
           <div className="flex items-center justify-center gap-2 text-green-400">
             <CheckCircle className="w-5 h-5" strokeWidth={1.5} />
             <p className="text-[14px] font-medium">You&apos;re already subscribed!</p>
+          </div>
+        );
+      case "forgotten":
+        return (
+          <div className="text-center">
+            <p className="text-[14px] text-red-400 mb-2">This email was previously removed and cannot be re-added. Please try a different email.</p>
+            <button
+              onClick={() => setStatus("idle")}
+              className="text-[13px] text-white/60 underline hover:text-white transition-colors"
+            >
+              Try again
+            </button>
           </div>
         );
       case "error":

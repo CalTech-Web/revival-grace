@@ -12,6 +12,7 @@ export type SubscribeResult =
   | "verification_sent"
   | "pending_verification"
   | "already_subscribed"
+  | "forgotten"
   | "error";
 
 interface SubscriptionContextType {

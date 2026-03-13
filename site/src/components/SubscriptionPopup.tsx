@@ -10,7 +10,7 @@ export default function SubscriptionPopup() {
   const [email, setEmail] = useState("");
   const [agree, setAgree] = useState(false);
   const [status, setStatus] = useState<
-    "idle" | "submitting" | "verification_sent" | "pending_verification" | "already_subscribed" | "error"
+    "idle" | "submitting" | "verification_sent" | "pending_verification" | "already_subscribed" | "forgotten" | "error"
   >("idle");
   const [submittedEmail, setSubmittedEmail] = useState("");
 
@@ -196,6 +196,22 @@ export default function SubscriptionPopup() {
             <p className="text-[13px] text-text">
               You are a verified subscriber. Enjoy reading our devotionals!
             </p>
+          </div>
+        ) : status === "forgotten" ? (
+          <div className="text-center py-4">
+            <AlertTriangle className="w-12 h-12 text-accent mx-auto mb-4" strokeWidth={1.5} />
+            <h3 className="font-serif text-[20px] font-bold text-heading mb-2">
+              Email Unavailable
+            </h3>
+            <p className="text-[13px] text-text mb-4 leading-relaxed">
+              This email was previously removed from our list and cannot be re-added. Please try a different email address.
+            </p>
+            <button
+              onClick={() => { setStatus("idle"); setEmail(""); }}
+              className="px-6 py-2 bg-primary text-white text-[13px] font-medium rounded-md hover:bg-primary-dark transition-colors"
+            >
+              Use Different Email
+            </button>
           </div>
         ) : status === "error" ? (
           <div className="text-center py-4">
