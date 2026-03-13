@@ -66,7 +66,7 @@ export default async function DevotionalPage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "Revival Grace Ministry",
-      logo: { "@type": "ImageObject", url: "https://www.revivalgrace.com/images/logo.jpg" },
+      logo: { "@type": "ImageObject", url: "https://www.revivalgrace.com/images/og-image.png" },
     },
     mainEntityOfPage: `https://www.revivalgrace.com/devotionals/${slug.join("/")}`,
   };
@@ -88,6 +88,7 @@ export default async function DevotionalPage({ params }: Props) {
               src={devotional.image}
               alt=""
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />

@@ -32,7 +32,7 @@ export default function TopicsPage() {
     <>
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <Image src="/images/hero/topics-bg.jpg" alt="" fill className="object-cover" priority />
+        <Image src="/images/hero/topics-bg.webp" alt="" fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-primary/80" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div

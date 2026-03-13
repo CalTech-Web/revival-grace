@@ -40,7 +40,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="relative py-20 overflow-hidden">
-        <Image src="/images/hero/contact-bg.jpg" alt="" fill className="object-cover" priority />
+        <Image src="/images/hero/contact-bg.webp" alt="" fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-primary/80" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div

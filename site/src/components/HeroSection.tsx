@@ -73,6 +73,7 @@ export default function HeroSection() {
                 src="/images/pastor-ewang-2.webp"
                 alt="Pastor Ewang Nelson"
                 fill
+                sizes="(max-width: 1024px) 100vw, 25vw"
                 className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 priority
               />
@@ -99,6 +100,7 @@ export default function HeroSection() {
                   src={latest.image}
                   alt={latest.title}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   priority
                 />

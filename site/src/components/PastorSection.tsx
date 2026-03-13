@@ -41,9 +41,10 @@ export default function PastorSection() {
               <div className="absolute -top-3 -left-3 w-full h-full border-2 border-primary/20 rounded-lg" />
               <div className="relative rounded-lg overflow-hidden h-[380px] lg:h-[480px]">
                 <Image
-                  src="/images/ministry-worship.jpg"
+                  src="/images/ministry-worship.webp"
                   alt="Ministry worship"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover"
                 />
               </div>

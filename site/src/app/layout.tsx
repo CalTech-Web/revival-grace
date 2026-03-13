@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
@@ -16,7 +17,7 @@ const geistSans = Geist({
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "700"],
 });
 
 const siteUrl = "https://www.revivalgrace.com";
@@ -50,9 +51,9 @@ export const metadata: Metadata = {
     url: siteUrl,
     images: [
       {
-        url: "/images/logo.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/og-image.png",
+        width: 248,
+        height: 203,
         alt: "Revival Grace Ministry",
       },
     ],
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Revival Grace Ministry",
     description: siteDescription,
-    images: ["/images/logo.jpg"],
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -73,12 +74,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S14TX78GLQ" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-S14TX78GLQ');`,
-          }}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-S14TX78GLQ"
+          strategy="afterInteractive"
         />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-S14TX78GLQ');`}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -87,7 +89,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Revival Grace Ministry",
               url: "https://www.revivalgrace.com",
-              logo: "https://www.revivalgrace.com/images/logo.jpg",
+              logo: "https://www.revivalgrace.com/images/og-image.png",
               description: siteDescription,
               founder: {
                 "@type": "Person",
