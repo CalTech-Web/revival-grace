@@ -4,6 +4,7 @@ import { Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubscriptionPopup from "@/components/SubscriptionPopup";
+import CookieConsent from "@/components/CookieConsent";
 import { SubscriptionProvider } from "@/contexts/SubscriptionContext";
 import "./globals.css";
 
@@ -78,6 +79,25 @@ export default function RootLayout({
             __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-S14TX78GLQ');`,
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Revival Grace Ministry",
+              url: "https://www.revivalgrace.com",
+              logo: "https://www.revivalgrace.com/images/logo.jpg",
+              description: siteDescription,
+              founder: {
+                "@type": "Person",
+                name: "Pastor Ewang Nelson",
+                jobTitle: "Founder & Senior Pastor",
+              },
+              sameAs: [],
+            }),
+          }}
+        />
       </head>
       <body className={`${geistSans.variable} ${playfair.variable} antialiased`}>
         <SubscriptionProvider>
@@ -85,6 +105,7 @@ export default function RootLayout({
           <main className="pt-[104px]">{children}</main>
           <Footer />
           <SubscriptionPopup />
+          <CookieConsent />
         </SubscriptionProvider>
       </body>
     </html>

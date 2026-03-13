@@ -25,6 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${devotional.title} | Revival Grace Ministry`,
     description: devotional.excerpt,
     alternates: { canonical: `https://www.revivalgrace.com/devotionals/${slug.join("/")}` },
+    openGraph: devotional.image
+      ? { images: [{ url: devotional.image, width: 1200, height: 630, alt: devotional.title }] }
+      : undefined,
   };
 }
 
@@ -42,8 +45,42 @@ export default async function DevotionalPage({ params }: Props) {
 
   const paragraphs = devotional.content.split("\n\n").filter(Boolean);
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.revivalgrace.com" },
+      { "@type": "ListItem", position: 2, name: "Devotionals", item: "https://www.revivalgrace.com/devotionals" },
+      { "@type": "ListItem", position: 3, name: category?.name || "Category", item: `https://www.revivalgrace.com/devotionals/${devotional.categorySlug}` },
+      { "@type": "ListItem", position: 4, name: devotional.title },
+    ],
+  };
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: devotional.title,
+    description: devotional.excerpt,
+    image: devotional.image ? `https://www.revivalgrace.com${devotional.image}` : undefined,
+    author: { "@type": "Person", name: "Pastor Ewang Nelson" },
+    publisher: {
+      "@type": "Organization",
+      name: "Revival Grace Ministry",
+      logo: { "@type": "ImageObject", url: "https://www.revivalgrace.com/images/logo.jpg" },
+    },
+    mainEntityOfPage: `https://www.revivalgrace.com/devotionals/${slug.join("/")}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="relative py-20 bg-primary overflow-hidden">
         {devotional.image && (
           <>
