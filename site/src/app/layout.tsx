@@ -24,6 +24,9 @@ const siteDescription =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  verification: {
+    google: "jdZJ67s1f0V5Dpq9vDl8yr5fL8VKQt-20J6VhGjjbzA",
+  },
   title: {
     default: "Revival Grace Ministry",
     template: "%s | Revival Grace Ministry",
