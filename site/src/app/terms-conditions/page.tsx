@@ -2,6 +2,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
+  description:
+    "Review the terms and conditions for using the Revival Grace Ministry website and services.",
+  alternates: { canonical: "https://www.revivalgrace.com/terms-conditions" },
 };
 
 export default function TermsConditionsPage() {

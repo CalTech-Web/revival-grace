@@ -2,6 +2,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
+  description:
+    "Read the Revival Grace Ministry privacy policy to learn how we collect, use, and protect your personal information.",
+  alternates: { canonical: "https://www.revivalgrace.com/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {

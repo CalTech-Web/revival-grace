@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Topics | Revival Grace Ministry",
-  description: "Explore faith-building devotional topics covering financial wisdom, Christian living, ministry, the Holy Spirit, spiritual warfare, holiness, and prayer and fasting.",
+  title: "Topics",
+  description:
+    "Browse devotional topics including prayer and fasting, holiness, faith, Christian living, financial breakthrough, and freedom from demonic oppression.",
+  alternates: { canonical: "https://www.revivalgrace.com/topics" },
 };
 
 export default function TopicsLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return <>{children}</>;
 }

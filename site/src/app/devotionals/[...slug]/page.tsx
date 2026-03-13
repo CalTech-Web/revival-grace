@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${devotional.title} | Revival Grace Ministry`,
     description: devotional.excerpt,
+    alternates: { canonical: `https://www.revivalgrace.com/devotionals/${slug.join("/")}` },
   };
 }
 
