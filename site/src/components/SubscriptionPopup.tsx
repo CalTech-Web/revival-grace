@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { X, CheckCircle, AlertTriangle, Loader2 } from "lucide-react";
+import { X, CheckCircle, AlertTriangle, Loader2, Mail } from "lucide-react";
 import { useSubscription } from "@/contexts/SubscriptionContext";
 
 export default function SubscriptionPopup() {
-  const { showPopup, setShowPopup, subscribe, checkEmail, isSubscribed } = useSubscription();
+  const { showPopup, setShowPopup, subscribe, isSubscribed, storeIntendedUrl } = useSubscription();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [agree, setAgree] = useState(false);
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "already_subscribed" | "blocked">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "verification_sent" | "pending_verification" | "already_subscribed" | "error"
+  >("idle");
+  const [submittedEmail, setSubmittedEmail] = useState("");
 
   if (!showPopup || isSubscribed) return null;
 
@@ -17,39 +20,30 @@ export default function SubscriptionPopup() {
     e.preventDefault();
     if (!agree) return;
 
-    // Check email status first
-    const emailStatus = checkEmail(email);
-    if (emailStatus === "already_subscribed") {
-      setStatus("already_subscribed");
-      setTimeout(() => {
-        setShowPopup(false);
-        setStatus("idle");
-      }, 2000);
-      return;
-    }
-    if (emailStatus === "blocked") {
-      setStatus("blocked");
-      return;
-    }
-
+    storeIntendedUrl();
+    setSubmittedEmail(email);
     setStatus("submitting");
+
     const result = await subscribe(name, email);
     setStatus(result);
 
-    if (result === "success") {
+    if (result === "already_subscribed") {
       setTimeout(() => {
         setShowPopup(false);
         setStatus("idle");
         setName("");
         setEmail("");
         setAgree(false);
-      }, 1500);
-    } else if (result === "already_subscribed") {
-      setTimeout(() => {
-        setShowPopup(false);
-        setStatus("idle");
       }, 2000);
     }
+  };
+
+  const handleClose = () => {
+    setShowPopup(false);
+    setStatus("idle");
+    setName("");
+    setEmail("");
+    setAgree(false);
   };
 
   return (
@@ -57,7 +51,7 @@ export default function SubscriptionPopup() {
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onClick={() => status === "idle" && setShowPopup(false)}
+        onClick={() => status === "idle" && handleClose()}
       />
 
       {/* Modal */}
@@ -65,7 +59,7 @@ export default function SubscriptionPopup() {
         {status === "idle" || status === "submitting" ? (
           <>
             <button
-              onClick={() => setShowPopup(false)}
+              onClick={handleClose}
               className="absolute top-4 right-4 text-text/40 hover:text-text transition-colors"
               aria-label="Close"
             >
@@ -149,37 +143,71 @@ export default function SubscriptionPopup() {
               </p>
             </form>
           </>
-        ) : status === "success" ? (
+        ) : status === "verification_sent" ? (
           <div className="text-center py-4">
-            <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" strokeWidth={1.5} />
+            <Mail className="w-12 h-12 text-primary mx-auto mb-4" strokeWidth={1.5} />
             <h3 className="font-serif text-[20px] font-bold text-heading mb-2">
-              Welcome!
+              Check Your Email
             </h3>
-            <p className="text-[13px] text-text">
-              You now have full access to all devotionals.
+            <p className="text-[13px] text-text leading-relaxed mb-1">
+              We sent a confirmation link to
             </p>
+            <p className="text-[13px] font-medium text-heading mb-3">
+              {submittedEmail}
+            </p>
+            <p className="text-[13px] text-text leading-relaxed mb-6">
+              Please click the link to verify your subscription and unlock all devotionals.
+            </p>
+            <button
+              onClick={handleClose}
+              className="px-6 py-2 border border-black/15 text-heading text-[13px] font-medium rounded-md hover:bg-black/5 transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        ) : status === "pending_verification" ? (
+          <div className="text-center py-4">
+            <Mail className="w-12 h-12 text-primary mx-auto mb-4" strokeWidth={1.5} />
+            <h3 className="font-serif text-[20px] font-bold text-heading mb-2">
+              Confirmation Resent
+            </h3>
+            <p className="text-[13px] text-text leading-relaxed mb-1">
+              We resent the confirmation link to
+            </p>
+            <p className="text-[13px] font-medium text-heading mb-3">
+              {submittedEmail}
+            </p>
+            <p className="text-[13px] text-text leading-relaxed mb-6">
+              Please check your inbox (and spam folder) and click the link to verify.
+            </p>
+            <button
+              onClick={handleClose}
+              className="px-6 py-2 border border-black/15 text-heading text-[13px] font-medium rounded-md hover:bg-black/5 transition-colors"
+            >
+              Close
+            </button>
           </div>
         ) : status === "already_subscribed" ? (
           <div className="text-center py-4">
             <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" strokeWidth={1.5} />
             <h3 className="font-serif text-[20px] font-bold text-heading mb-2">
-              Already Subscribed!
+              Welcome Back!
             </h3>
             <p className="text-[13px] text-text">
-              You are already a subscriber. Enjoy reading our devotionals!
+              You are a verified subscriber. Enjoy reading our devotionals!
             </p>
           </div>
-        ) : status === "blocked" ? (
+        ) : status === "error" ? (
           <div className="text-center py-4">
             <AlertTriangle className="w-12 h-12 text-accent mx-auto mb-4" strokeWidth={1.5} />
             <h3 className="font-serif text-[20px] font-bold text-heading mb-2">
-              Too Many Attempts
+              Something Went Wrong
             </h3>
             <p className="text-[13px] text-text mb-4">
-              This email has been used too many times. Please try a different email or contact us for help.
+              We could not process your subscription. Please try again later.
             </p>
             <button
-              onClick={() => { setShowPopup(false); setStatus("idle"); }}
+              onClick={handleClose}
               className="px-6 py-2 border border-black/15 text-heading text-[13px] font-medium rounded-md hover:bg-black/5 transition-colors"
             >
               Close

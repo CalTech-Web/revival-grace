@@ -10,13 +10,14 @@ interface Props {
 }
 
 export default function DevotionalContent({ children, preview }: Props) {
-  const { isSubscribed, setShowPopup } = useSubscription();
+  const { isSubscribed, setShowPopup, storeIntendedUrl } = useSubscription();
 
   useEffect(() => {
     if (!isSubscribed) {
+      storeIntendedUrl();
       setShowPopup(true);
     }
-  }, [isSubscribed, setShowPopup]);
+  }, [isSubscribed, setShowPopup, storeIntendedUrl]);
 
   if (isSubscribed) {
     return <>{children}</>;
@@ -54,7 +55,10 @@ export default function DevotionalContent({ children, preview }: Props) {
           </div>
           <div>
             <button
-              onClick={() => setShowPopup(true)}
+              onClick={() => {
+                storeIntendedUrl();
+                setShowPopup(true);
+              }}
               className="px-8 py-3 bg-primary text-white text-[13px] font-medium tracking-wide rounded-md hover:bg-primary-dark transition-colors"
             >
               Subscribe for Free

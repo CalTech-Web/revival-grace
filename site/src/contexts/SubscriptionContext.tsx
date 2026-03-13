@@ -8,21 +8,27 @@ interface Subscriber {
   subscribedAt: string;
 }
 
+export type SubscribeResult =
+  | "verification_sent"
+  | "pending_verification"
+  | "already_subscribed"
+  | "error";
+
 interface SubscriptionContextType {
   isSubscribed: boolean;
   subscriberEmail: string | null;
   showPopup: boolean;
   setShowPopup: (show: boolean) => void;
-  subscribe: (name: string, email: string) => Promise<"success" | "already_subscribed" | "blocked">;
-  checkEmail: (email: string) => "new" | "already_subscribed" | "blocked";
+  subscribe: (name: string, email: string) => Promise<SubscribeResult>;
+  markAsSubscribed: (email: string, name?: string) => void;
+  storeIntendedUrl: () => void;
 }
 
 const SubscriptionContext = createContext<SubscriptionContextType | null>(null);
 
 const STORAGE_KEY = "rgm_subscriber";
-const ATTEMPTS_KEY = "rgm_attempts";
 const COOKIE_NAME = "rgm_sub";
-const MAX_ATTEMPTS = 3;
+const INTENDED_URL_KEY = "rgm_intended_url";
 
 function setCookie(name: string, value: string, days: number) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
@@ -58,49 +64,9 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const checkEmail = useCallback((email: string): "new" | "already_subscribed" | "blocked" => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      try {
-        const subscriber: Subscriber = JSON.parse(stored);
-        if (subscriber.email.toLowerCase() === email.toLowerCase()) {
-          return "already_subscribed";
-        }
-      } catch {
-        // ignore
-      }
-    }
-
-    const attemptsRaw = localStorage.getItem(ATTEMPTS_KEY);
-    if (attemptsRaw) {
-      try {
-        const attempts: Record<string, number> = JSON.parse(attemptsRaw);
-        const key = email.toLowerCase();
-        if ((attempts[key] || 0) >= MAX_ATTEMPTS) {
-          return "blocked";
-        }
-      } catch {
-        // ignore
-      }
-    }
-
-    return "new";
-  }, []);
-
-  const subscribe = useCallback(async (name: string, email: string): Promise<"success" | "already_subscribed" | "blocked"> => {
-    const status = checkEmail(email);
-    if (status !== "new") return status;
-
-    // Track attempts
-    const attemptsRaw = localStorage.getItem(ATTEMPTS_KEY);
-    const attempts: Record<string, number> = attemptsRaw ? JSON.parse(attemptsRaw) : {};
-    const key = email.toLowerCase();
-    attempts[key] = (attempts[key] || 0) + 1;
-    localStorage.setItem(ATTEMPTS_KEY, JSON.stringify(attempts));
-
-    // Store subscriber
+  const markAsSubscribed = useCallback((email: string, name?: string) => {
     const subscriber: Subscriber = {
-      name,
+      name: name || "",
       email: email.toLowerCase(),
       subscribedAt: new Date().toISOString(),
     };
@@ -108,27 +74,36 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
     setCookie(COOKIE_NAME, "1", 365);
     setIsSubscribed(true);
     setSubscriberEmail(email.toLowerCase());
+  }, []);
 
-    // POST to CalTech Web forms service (fire and forget)
+  const storeIntendedUrl = useCallback(() => {
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem(INTENDED_URL_KEY, window.location.pathname + window.location.search);
+    }
+  }, []);
+
+  const subscribe = useCallback(async (name: string, email: string): Promise<SubscribeResult> => {
     try {
-      await fetch("https://forms.caltechweb.com/api/submit", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          site: "revivalgrace.com",
-          name,
-          email,
-          message: `New devotional subscriber: ${name} (${email})`,
-          source: "registration",
-        }),
+        body: JSON.stringify({ name, email }),
       });
-    } catch {
-      // Forms service may reject due to CORS before domain is registered.
-      // Subscription still works locally.
-    }
 
-    return "success";
-  }, [checkEmail]);
+      if (!res.ok) return "error";
+
+      const data = await res.json();
+      const status = data.status as SubscribeResult;
+
+      if (status === "already_subscribed") {
+        markAsSubscribed(email, name);
+      }
+
+      return status;
+    } catch {
+      return "error";
+    }
+  }, [markAsSubscribed]);
 
   if (!mounted) {
     return <>{children}</>;
@@ -136,7 +111,7 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
 
   return (
     <SubscriptionContext.Provider
-      value={{ isSubscribed, subscriberEmail, showPopup, setShowPopup, subscribe, checkEmail }}
+      value={{ isSubscribed, subscriberEmail, showPopup, setShowPopup, subscribe, markAsSubscribed, storeIntendedUrl }}
     >
       {children}
     </SubscriptionContext.Provider>
@@ -148,8 +123,9 @@ const defaultValue: SubscriptionContextType = {
   subscriberEmail: null,
   showPopup: false,
   setShowPopup: () => {},
-  subscribe: async () => "success",
-  checkEmail: () => "new",
+  subscribe: async () => "error",
+  markAsSubscribed: () => {},
+  storeIntendedUrl: () => {},
 };
 
 export function useSubscription() {
