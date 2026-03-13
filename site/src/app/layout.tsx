@@ -18,13 +18,17 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const siteUrl = "https://www.revivalgrace.com";
+const siteDescription =
+  "A Christ-centered community devoted to teaching the Word, nurturing spiritual growth, and guiding believers toward purposeful living.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Revival Grace Ministry",
     template: "%s | Revival Grace Ministry",
   },
-  description:
-    "A Christ-centered community devoted to teaching the Word, nurturing spiritual growth, and guiding believers toward purposeful living.",
+  description: siteDescription,
   keywords: [
     "Revival Grace Ministry",
     "Pastor Ewang Nelson",
@@ -34,6 +38,27 @@ export const metadata: Metadata = {
     "holiness",
     "spiritual growth",
   ],
+  openGraph: {
+    type: "website",
+    siteName: "Revival Grace Ministry",
+    title: "Revival Grace Ministry",
+    description: siteDescription,
+    url: siteUrl,
+    images: [
+      {
+        url: "/images/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Revival Grace Ministry",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Revival Grace Ministry",
+    description: siteDescription,
+    images: ["/images/logo.jpg"],
+  },
 };
 
 export default function RootLayout({
