@@ -77,6 +77,27 @@ export async function addOrUpdateSubscriber(
 
   if (!res.ok) {
     const error = await res.json().catch(() => ({}));
+    // Handle permanently deleted contacts who must re-subscribe via Mailchimp directly
+    if (error.title === "Forgotten Email Not Subscribed") {
+      // Use POST instead of PUT to create a brand new subscription
+      const postRes = await fetch(`${BASE_URL}/lists/${LIST_ID}/members`, {
+        method: "POST",
+        headers: {
+          Authorization: authHeader,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email_address: email.toLowerCase(),
+          status: "pending",
+          merge_fields: { FNAME: firstName, LNAME: lastName },
+        }),
+      });
+      if (!postRes.ok) {
+        const postError = await postRes.json().catch(() => ({}));
+        throw new Error(`Mailchimp API error: ${postRes.status} ${JSON.stringify(postError)}`);
+      }
+      return "verification_sent";
+    }
     throw new Error(`Mailchimp API error: ${res.status} ${JSON.stringify(error)}`);
   }
 

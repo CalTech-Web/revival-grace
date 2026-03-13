@@ -28,8 +28,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ status: result });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Unknown error";
-    console.error("Subscribe error:", message);
-    return NextResponse.json({ status: "error", message }, { status: 500 });
+    console.error("Subscribe error:", error instanceof Error ? error.message : error);
+    return NextResponse.json({ status: "error", message: "Something went wrong" }, { status: 500 });
   }
 }
