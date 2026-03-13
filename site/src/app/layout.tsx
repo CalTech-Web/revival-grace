@@ -71,6 +71,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S14TX78GLQ" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-S14TX78GLQ');`,
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${playfair.variable} antialiased`}>
         <SubscriptionProvider>
           <Navbar />
