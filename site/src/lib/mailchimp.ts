@@ -1,11 +1,21 @@
 import { createHash } from "crypto";
 
-const API_KEY = process.env.MAILCHIMP_API_KEY!;
-const SERVER = process.env.MAILCHIMP_SERVER_PREFIX!;
-const LIST_ID = process.env.MAILCHIMP_AUDIENCE_ID!;
-const BASE_URL = `https://${SERVER}.api.mailchimp.com/3.0`;
+function getConfig() {
+  const API_KEY = process.env.MAILCHIMP_API_KEY;
+  const SERVER = process.env.MAILCHIMP_SERVER_PREFIX;
+  const LIST_ID = process.env.MAILCHIMP_AUDIENCE_ID;
 
-const authHeader = `Basic ${Buffer.from(`anystring:${API_KEY}`).toString("base64")}`;
+  if (!API_KEY || !SERVER || !LIST_ID) {
+    throw new Error(
+      `Missing Mailchimp env vars: API_KEY=${!!API_KEY}, SERVER=${!!SERVER}, LIST_ID=${!!LIST_ID}`
+    );
+  }
+
+  const BASE_URL = `https://${SERVER}.api.mailchimp.com/3.0`;
+  const authHeader = `Basic ${Buffer.from(`anystring:${API_KEY}`).toString("base64")}`;
+
+  return { BASE_URL, LIST_ID, authHeader };
+}
 
 export function getSubscriberHash(email: string): string {
   return createHash("md5").update(email.toLowerCase()).digest("hex");
@@ -14,6 +24,7 @@ export function getSubscriberHash(email: string): string {
 export async function getSubscriberStatus(
   email: string
 ): Promise<"subscribed" | "pending" | "unsubscribed" | "cleaned" | "not_found"> {
+  const { BASE_URL, LIST_ID, authHeader } = getConfig();
   const hash = getSubscriberHash(email);
 
   const res = await fetch(`${BASE_URL}/lists/${LIST_ID}/members/${hash}`, {
@@ -36,6 +47,7 @@ export async function addOrUpdateSubscriber(
   email: string,
   name: string
 ): Promise<"verification_sent" | "pending_verification" | "already_subscribed"> {
+  const { BASE_URL, LIST_ID, authHeader } = getConfig();
   const status = await getSubscriberStatus(email);
 
   if (status === "subscribed") {
