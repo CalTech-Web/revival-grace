@@ -5,6 +5,7 @@ import { Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubscriptionPopup from "@/components/SubscriptionPopup";
+import DonationPopup from "@/components/DonationPopup";
 import CookieConsent from "@/components/CookieConsent";
 import { SubscriptionProvider } from "@/contexts/SubscriptionContext";
 import "./globals.css";
@@ -107,6 +108,7 @@ export default function RootLayout({
           <main className="pt-[104px]">{children}</main>
           <Footer />
           <SubscriptionPopup />
+          <DonationPopup />
           <CookieConsent />
         </SubscriptionProvider>
       </body>

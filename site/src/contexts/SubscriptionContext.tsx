@@ -15,12 +15,17 @@ export type SubscribeResult =
   | "forgotten"
   | "error";
 
+export type VerifyResult = "approved" | "blacklisted" | "not_found" | "error";
+
 interface SubscriptionContextType {
   isSubscribed: boolean;
   subscriberEmail: string | null;
   showPopup: boolean;
   setShowPopup: (show: boolean) => void;
+  showDonationPopup: boolean;
+  setShowDonationPopup: (show: boolean) => void;
   subscribe: (name: string, email: string) => Promise<SubscribeResult>;
+  verifyEmail: (email: string) => Promise<VerifyResult>;
   markAsSubscribed: (email: string, name?: string) => void;
   storeIntendedUrl: () => void;
 }
@@ -30,6 +35,7 @@ const SubscriptionContext = createContext<SubscriptionContextType | null>(null);
 const STORAGE_KEY = "rgm_subscriber";
 const COOKIE_NAME = "rgm_sub";
 const INTENDED_URL_KEY = "rgm_intended_url";
+const DONATION_SHOWN_KEY = "rgm_donation_shown";
 
 function setCookie(name: string, value: string, days: number) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
@@ -45,6 +51,7 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [subscriberEmail, setSubscriberEmail] = useState<string | null>(null);
   const [showPopup, setShowPopup] = useState(false);
+  const [showDonationPopup, setShowDonationPopup] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -77,11 +84,44 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
     setSubscriberEmail(email.toLowerCase());
   }, []);
 
+  const triggerDonationPopup = useCallback(() => {
+    const alreadyShown = localStorage.getItem(DONATION_SHOWN_KEY);
+    if (!alreadyShown) {
+      setTimeout(() => {
+        setShowDonationPopup(true);
+      }, 500);
+    }
+  }, []);
+
   const storeIntendedUrl = useCallback(() => {
     if (typeof window !== "undefined") {
       sessionStorage.setItem(INTENDED_URL_KEY, window.location.pathname + window.location.search);
     }
   }, []);
+
+  const verifyEmail = useCallback(async (email: string): Promise<VerifyResult> => {
+    try {
+      const res = await fetch("/api/verify-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) return "error";
+
+      const data = await res.json();
+      const status = data.status as VerifyResult;
+
+      if (status === "approved") {
+        markAsSubscribed(email);
+        triggerDonationPopup();
+      }
+
+      return status;
+    } catch {
+      return "error";
+    }
+  }, [markAsSubscribed, triggerDonationPopup]);
 
   const subscribe = useCallback(async (name: string, email: string): Promise<SubscribeResult> => {
     try {
@@ -112,7 +152,18 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
 
   return (
     <SubscriptionContext.Provider
-      value={{ isSubscribed, subscriberEmail, showPopup, setShowPopup, subscribe, markAsSubscribed, storeIntendedUrl }}
+      value={{
+        isSubscribed,
+        subscriberEmail,
+        showPopup,
+        setShowPopup,
+        showDonationPopup,
+        setShowDonationPopup,
+        subscribe,
+        verifyEmail,
+        markAsSubscribed,
+        storeIntendedUrl,
+      }}
     >
       {children}
     </SubscriptionContext.Provider>
@@ -124,7 +175,10 @@ const defaultValue: SubscriptionContextType = {
   subscriberEmail: null,
   showPopup: false,
   setShowPopup: () => {},
+  showDonationPopup: false,
+  setShowDonationPopup: () => {},
   subscribe: async () => "error",
+  verifyEmail: async () => "error",
   markAsSubscribed: () => {},
   storeIntendedUrl: () => {},
 };
